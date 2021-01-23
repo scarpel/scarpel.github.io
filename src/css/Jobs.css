@@ -1,0 +1,18 @@
+.jobs{
+    position: relative;
+    padding-top: 45px;
+
+    z-index: 100000 !important;
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.jobs .videos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 15px;
+    height: 65vh;
+}

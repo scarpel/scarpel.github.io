@@ -1,0 +1,51 @@
+.pagination{
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+
+    display: flex;
+    gap: 10px;
+
+    background-color: blue;
+}
+
+.pagination label{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max(15px, 1.25vw);
+    height: max(15px, 1.25vw);
+    background-color: transparent;
+
+    border: 3px solid var(--white);
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.pagination label input{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+}
+
+.pagination label span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: max(20px, 1.5vw);
+    height: max(20px, 1.5vw);
+    border-radius: 50%;
+    background-color: transparent;
+
+    transition: all 0.5s ease-out;
+}
+
+.pagination label input:checked+span{
+    background-color: var(--white);
+}

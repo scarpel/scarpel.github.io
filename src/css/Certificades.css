@@ -1,0 +1,13 @@
+.certificades{
+    display: grid;
+    align-content: center;
+
+    grid-template-rows: repeat(3, 20vh);
+    grid-template-columns: repeat( auto-fit, 350px );
+    grid-auto-flow: column;
+    column-gap: 100px;
+
+    width: fit-content;
+    height: 500px;
+    padding-right: 50px;
+}

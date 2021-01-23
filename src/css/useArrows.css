@@ -1,0 +1,63 @@
+.left-arrow, .right-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    z-index: 50;
+}
+
+.left-arrow{
+    left: min(65px, 10vw);
+}
+
+.left-arrow::before, .left-arrow::after, .right-arrow::before, .right-arrow::after{
+    content: "";
+    position: absolute;
+
+    width: 80%;
+    height: 15%;
+
+    background-color: white;
+    border-radius: 15px;
+}
+
+.left-arrow::before{
+    top: 8px;
+    left: -1px;
+
+    transform: rotate(-40deg);
+}
+
+.left-arrow::after{
+    bottom: 8px;
+    left: -1px;
+
+    transform: rotate(40deg);
+}
+
+.right-arrow::before{
+    top: 8px;
+    right: -1px;
+
+    transform: rotate(40deg);
+}
+
+.right-arrow::after{
+    bottom: 8px;
+    right: -1px;
+
+    transform: rotate(-40deg);
+}
+
+.right-arrow{
+    right: min(65px, 10vw);
+}

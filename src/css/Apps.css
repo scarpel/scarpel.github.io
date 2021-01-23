@@ -1,0 +1,150 @@
+.apps{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: -25px;
+    padding: 0 10vw;
+    box-sizing: border-box;
+
+    position: relative;
+
+    height: calc(100vh - min(120px, 20vw) - 55px) !important;
+    width: calc(100vw - min(120px, 20vw)) !important;
+}
+
+.apps .app-card{
+    animation: swipe-right 0.5s ease-out forwards;
+}
+
+.apps .apps-index{
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+
+    display: flex;
+    gap: 15px;
+
+    color: var(--white);
+    font-size: 18vh;
+    font-weight: 500;
+    letter-spacing: -1.5vh;
+
+    width: fit-content;
+
+    filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.3));
+}
+
+.apps .apps-index .total-indexes{
+    color: transparent;
+    font-weight: 700;
+    -webkit-text-stroke: 2px var(--white);
+}
+
+.apps .arrow-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 7vh;
+    height: 7vh;
+    padding: 0;
+
+    font-size: 7vh;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+
+    transition: all 0.5s ease-out, opacity 0.8s ease-out;
+    cursor: pointer;
+}
+
+.apps .arrow-btn:hover{
+    opacity: 0.5;
+}
+
+.apps .arrow-btn:focus{
+    outline: none;
+    opacity: 0.5;
+}
+
+.apps .arrow-btn:disabled{
+    opacity: 0;
+    cursor: default;
+}
+
+.apps .arrow-btn.left{
+    left: 0;
+}
+
+.apps .arrow-btn.right{
+    right: 0;
+}
+
+@media(max-width: 499px){
+    .apps{
+        width: calc(100vw - min(50px, 8vw)) !important;
+    }
+}
+
+@media (min-width:499px) and (max-width: 700px){
+    .apps{
+        width: calc(100vw - min(170px, 16vw)) !important;
+    }
+}
+
+@media (max-width: 700px){
+    .apps{
+        margin-top: -5px;
+        padding: 0 5vw;
+    }
+
+    .apps .app-card{
+        align-self: center;
+        max-height: 100%;
+    }
+
+    .apps .apps-index{
+        display: none;
+    }
+
+    .apps .arrow-btn{
+        z-index: 100;
+    }
+}
+
+@keyframes swipe-left{
+    from{
+        transform: translateX(-50vw) skewX(-10deg);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0) skewX(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px){
+    .apps{
+        padding: 0 max(50px, 5vw);
+    }
+
+    .apps .app-card{
+        width: 100vw;
+    }
+}
+
+@keyframes swipe-right{
+    from{
+        transform: translateX(50vw) skewX(10deg);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0) skewX(0);
+        opacity: 1;
+    }
+}

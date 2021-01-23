@@ -1,0 +1,31 @@
+.text-carousel{
+    position: relative;
+}
+
+.text-carousel .animated-text{
+    position: relative;
+    filter: drop-shadow(0 0 1px var(--black));
+    z-index: 5;
+}
+
+.text-carousel .underline{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+
+    width: 0px;
+    height: 4px;
+    background-color: var(--white);
+    border-radius: 15px;
+
+    animation: underline 0.5s ease-out forwards;
+    transform-origin: left;
+
+    z-index: 1;
+}
+
+@keyframes underline{
+    to{
+        width: 90%;
+    }
+}

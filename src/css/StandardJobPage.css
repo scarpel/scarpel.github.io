@@ -1,0 +1,58 @@
+.job-page{
+    position: relative;
+    display: flex;
+    gap: 4vw !important;
+
+    margin-top: 25px;
+    margin-right: 50px;
+    z-index: 15;
+}
+
+.job-page .job-desc{
+    width: 25vw;
+    text-align: left;
+    height: 100%;
+}
+
+.job-page .job-desc h1, .job-page .job-desc .animated-text{
+    margin: 0;
+
+    width: 15vh;
+
+    font-weight: 600;
+    font-size: 5.25vw;
+    letter-spacing: -0.3vw;
+    line-height: 4.5vw;
+
+    color: var(--trabalhos);
+}
+
+.job-page .job-desc p{
+    color: var(--white);
+
+    font-size: 1.25em;
+    line-height: 1.25em;
+    font-weight: 400;
+    text-align: justify;
+
+    animation: show-bottom 0.5s ease-out;
+}
+
+@media (max-width: 700px){
+    .job-page{
+        margin-top: 35px;
+        margin-left: min(15px, 4vw);
+        width: fit-content;
+        gap: max(4vw, 25px) !important;
+    }
+
+    .job-page .job-desc{
+        width: min(75vw, 250px);
+    }
+
+    .job-page .job-desc h1, .job-page .job-desc .animated-text{
+        font-size: min(13vw, 3em);
+        letter-spacing: -0.3vw;
+        line-height: 4.5vw;
+    }
+}

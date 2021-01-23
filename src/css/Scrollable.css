@@ -1,0 +1,5 @@
+.scrollable{
+    position: relative;
+    width: fit-content;
+    height: 100vh;
+}

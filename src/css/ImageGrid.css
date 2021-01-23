@@ -1,0 +1,103 @@
+.image-grid{
+    display: flex;
+    gap: 10px;
+
+    height: calc(64vh + 10px);
+}
+
+.image-grid.mock .square, .image-grid.mock .panorama, .image-grid.mock .portrait{
+    background-color: rgb(77, 77, 77);
+    border-radius: 5px;
+
+    animation: flicker 1.5s ease alternate-reverse infinite;
+}
+
+.image-grid img{
+    position: relative;
+
+    border-radius: 5px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    opacity: 1;
+
+    transition: opacity 0.5s ease-out;
+    cursor: pointer;
+
+    animation: show-up 1s ease-out;
+}
+
+.image-grid img:hover{
+    opacity: 0.5;
+}
+
+.image-grid .square{
+    width: 32vh;
+    height: 32vh;
+}
+
+.image-grid .panorama{
+    width: auto;
+    height: 32vh;
+}
+
+.image-grid .portrait{
+    width: 32vh;
+    height: 100%;
+}
+
+.image-grid .squares-panorama, .image-grid .squares-panorama-reversed, .image-grid .two-squares, .image-grid .squares,
+.image-grid .two-panoramas{
+    gap: 10px;
+}
+
+.image-grid .squares-panorama, .image-grid .squares-panorama-reversed{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid .squares-panorama-reversed{
+    flex-direction: column-reverse;
+}
+
+.image-grid .squares{
+    display: flex;
+    flex-direction: row;
+}
+
+.image-grid .two-squares{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid .bigger-square img{
+    width: 64vh;
+    height: 100%;
+}
+
+.image-grid .two-panoramas{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid .bigger-panorama img{
+    width: 128vh;
+    height: 100%;
+}
+
+@keyframes flicker{
+    from{
+        opacity: 0.3;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes show-up{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

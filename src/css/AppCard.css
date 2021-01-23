@@ -1,0 +1,219 @@
+.app-card{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1.5vw;
+    align-items: flex-start;
+
+    height: fit-content;
+}
+
+.app-card .app-img{
+    width: 100%;
+}
+
+.app-card .app-img img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.app-card .app-info{
+    color: var(--white);
+    text-align: left;
+}
+
+.app-card.right .app-info *{
+    animation-name: show-left !important;
+}
+
+.app-card.left .app-info *{
+    animation-name: show-right !important;
+}
+
+.app-card .app-info .app-tools{
+    position: relative;
+    display: flex;
+    gap: 15px;
+
+    font-size: 2vw;
+    line-height: 2vw;
+
+    margin-bottom: 2.5vh;
+    padding-left: 5px;
+
+    width: fit-content;
+
+    opacity: 0;
+    animation: show-left 0.5s ease-out 0.1s forwards;
+}
+
+.app-card .app-info .app-tools .tool-icon{
+    text-transform: capitalize;
+}
+
+.app-card .app-info .app-title{
+    margin: 0;
+
+    font-size: 7.5vw;
+    font-weight: 600;
+    letter-spacing: -0.5vw;
+    line-height: 6vw;
+
+    opacity: 0;
+    animation: show-left 0.5s ease-out 0.2s forwards;
+}
+
+.app-card .app-info .app-desc{
+    margin: 2vh 0 4vh 0;
+    font-size: 1.5vw;
+    letter-spacing: -0.05vw;
+    line-height: 2vw;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+
+    opacity: 0;
+    animation: show-left 0.5s ease-out 0.3s forwards;
+}
+
+.app-card .app-info button{
+    position: relative;
+
+    border: 1px solid var(--white);
+    background-color: transparent;
+    border-radius: 5px;
+
+    color: var(--white);
+    font-size: 1.1vw;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.1vw;
+
+    padding: 0.7vw 2vw;
+
+    transition: all 0.3s ease-out 0.2s;
+
+    cursor: pointer;
+
+    opacity: 0;
+    animation: show-left 0.5s ease-out 0.4s forwards;
+}
+
+.app-card .app-info button:hover{
+    color: var(--black);
+}
+
+.app-card .app-info button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+    
+    background-color: var(--white);
+    transform-origin: left;
+
+    z-index: -1;
+
+    transition: all 0.3s ease-out;
+}
+
+.app-card .app-info button:hover::after{
+    width: 100%;
+}
+
+@media (max-width: 700px){
+    .app-card{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5vw;
+        align-items: center;
+        justify-content: center;
+    
+        height: fit-content;
+        box-sizing: border-box;
+    }
+
+    .app-card .app-img{
+        width: 60%;
+    }
+
+    .app-card .app-info{
+        text-align: center;
+    }
+
+    .app-card .app-info .app-tools{
+        display: none;
+    }
+
+    .app-card .app-info .app-title{
+        margin: 0;
+        font-size: min(5em, 20vw);
+        letter-spacing: -1vw;
+        line-height: max(0.8em, 5vw);
+    }
+
+    .app-card .app-info .app-desc{
+        margin: 2vh auto;
+        font-size: min(1em, 5vw);
+        letter-spacing: -0.05vw;
+        line-height: min(1.2em, 6vw);
+        text-align: justify;
+
+        -webkit-line-clamp: 10;
+        width: 60vw !important;
+    }
+
+    .app-card .app-info button{
+        font-size: min(1em, 6vw);
+        padding: 0.7vw 2vw;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px){
+    .app-card .app-info .app-tools{
+        gap: 10px;
+        font-size: 2.5vw;
+        line-height: 3vw;
+    
+        padding-left: 5px;
+    }
+
+    .app-card .app-info .app-title{
+        font-size: 10vw;
+        font-weight: 600;
+        letter-spacing: -0.5vw;
+        line-height: 8vw;
+    }
+
+    .app-card .app-info .app-desc{
+        text-align: justify;
+        width: 95%;
+
+        margin: 2vh 0 3vh 0;
+        font-size: 2vw;
+        line-height: 2.6vw;
+
+        -webkit-line-clamp: 6;
+    }
+
+    .app-card .app-info button{
+        font-size: min(1.5em, 1.8vw);
+        letter-spacing: 0.1vw;
+    
+        padding: 0.7vw 2vw;
+    }
+}
+
+@keyframes pop-up-icon{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

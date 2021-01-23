@@ -1,0 +1,20 @@
+.simple-info{
+    color: var(--white);
+    text-align: left;
+
+    width: fit-content;
+}
+
+.simple-info .title{
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    font-size: 1.2em;
+
+    user-select: none;
+}
+
+.simple-info .children{
+    font-size: 1.5em;
+}

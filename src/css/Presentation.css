@@ -1,0 +1,91 @@
+.presentation{
+    width: 45vw !important;
+    height: 72vh;
+}
+
+.presentation .left-card{
+    position: relative;
+    height: 100%;
+}
+
+.presentation .me-img {
+    position: absolute;
+    left: 10vw;
+    bottom: 5vw;
+    height: 65vh;
+
+    z-index: 10;
+
+    animation: slide 1s ease-out;
+}
+
+.presentation .name, .presentation .upper-name{
+    position: absolute;
+    left: 0;
+    bottom: 0.65em;
+
+    color: var(--sobre);
+    font-size: max(4.25em, 8vw);
+    line-height: max(0.8em, 6vw);
+    letter-spacing: -0.3vw;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    z-index: 5;
+}
+
+.presentation .upper-name{
+    z-index: 15;
+
+    color: transparent;
+    -webkit-text-stroke: 2px var(--sobre);
+}
+
+.presentation .additional-info{
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+
+    font-size: max(2.3em, 3.5vw);
+    font-weight: 600;
+    letter-spacing: min(-2px, -0.2vw);
+
+    color: var(--white);
+
+    z-index: 15;
+}
+
+@media (max-width: 800px){
+    .presentation{
+        width: min(400px, 95vw) !important;
+        height: 75vh;
+        margin-left: 1vw;
+    }
+
+    .presentation .me-img {
+        bottom: max(45px, 7vw);
+    }
+
+    .presentation .name, .presentation .upper-name{
+        bottom: 11%;
+
+        font-size: min(17vw, 4.5em);
+        line-height: max(0.8em, 6vw);
+        letter-spacing: -0.3vw;
+        font-weight: 700;
+    }
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(25vw);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

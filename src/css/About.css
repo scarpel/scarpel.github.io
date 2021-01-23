@@ -1,0 +1,196 @@
+.about{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: fit-content;
+
+    padding-top: 50px;
+    padding-right: 100px;
+}
+
+.about .glitch-text{
+    color: var(--sobre);
+}
+
+.about .glitch-text .auxiliar-text{
+    -webkit-text-stroke-color: var(--sobre);
+}
+
+.about .navbar .menu-icon.clicked div{
+    background-color: var(--black);
+}
+
+.about .navbar .menu-icon:hover div{
+    background-color: var(--sobre);
+}
+
+.about .text-block{
+    display: flex;
+    width: 40vw;
+    height: 65%;
+    transform: translateX(0);
+
+    text-align: justify;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--white);
+    opacity: 1;
+
+    padding: 25px 50px;
+    
+    transition: all 0.6s ease-out 0.3s;
+}
+
+.about .hidden .text-block{
+    opacity: 0;
+    transform: translateX(150px);
+}
+
+.about .hidden .certificades{
+    opacity: 0;
+}
+
+.text-block p{
+    padding: 0;
+    margin: 0;
+}
+
+.text-block em{
+    color: var(--sobre);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.text-block:nth-child(odd){
+    align-items: flex-end;
+}
+
+.about .lottie-container{
+    height: 60vh;
+    width: 60vh;
+}
+
+.about .about-me{
+    position: relative;
+    display: flex;
+
+    width: 48vw;
+    margin-left: 5vw;
+    padding-left: 15vw;
+}
+
+.about .about-me .lottie-container.statue{
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+}
+
+.about .education{
+    position: relative;
+    display: flex;
+
+    width: 48vw;
+    margin-left: -5vw;
+}
+
+.about .education .text-block{
+    align-self: flex-end;
+    height: auto;
+    margin-bottom: 25%;
+}
+
+.about .education .lottie-container.graduation{
+    position: absolute;
+    top: -7%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .certificades-container{
+    position: relative;
+
+    display: flex;
+
+    margin-left: -5vw;
+}
+
+.about .certificades-container .lottie-container{
+    position: absolute;
+    bottom: 25%;
+    left: 10vw;
+}
+
+.about .certificades-container .certificades{
+    justify-items: center;
+}
+
+@media (max-width: 800px){
+    .about{
+        height: 80vh;
+    }
+
+    .about .about-me, .about .education, .about .certificades-container{
+        min-width: fit-content;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5vw;
+        margin-left: 5vw;
+    
+        width: fit-content;
+        height: 100%;
+    }
+
+    .about .lottie-container{
+        height: min(90vw, 60vh);
+        width: min(90vw, 60vh);
+
+        align-self: flex-end;
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+
+    .about .about-me, .about .education, .about .certificades-container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5vw;
+    
+        width: fit-content;
+        height: 100%;
+        margin-left: 5vw;
+        padding-left: 0;
+    }
+
+    .about .about-me .lottie-container.statue, .about .education .lottie-container.graduation,
+    .about .certificades-container .lottie-container{
+        align-self: flex-end;
+        position: relative;
+        bottom: 5%;
+        left: 0;
+    }
+
+    .about .text-block{
+        display: flex;
+        width: min(80vw, 400px);
+        height: fit-content;
+        transform: translateX(0);
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .about .about-me .text-block, .about .education .text-block, .about .certificades-container .text-block{
+        align-self: flex-start;
+        position: relative;
+        top: 5%;
+    }
+
+    .about .education .lottie-container.graduation{
+        transform: none;
+    }
+}

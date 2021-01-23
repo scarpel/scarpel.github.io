@@ -1,0 +1,162 @@
+.home{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+}
+
+.home #ghs-logo{
+    fill: var(--white);
+}
+
+.home .card{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    width: 50vw;
+    height: 30vh;
+    z-index: 50;
+}
+
+.home .card .animated-text{
+    font-size: max(1.8em, 3.5vw);
+    margin: 5px;
+    letter-spacing: -0.2vw;
+}
+
+.home .card .animated-text.name{
+    position: relative;
+    font-size: max(2.5em, 5.5vw);
+    margin: 0;
+    letter-spacing: -0.3vw;
+    line-height: max(0.5em, 2.7vw);
+    font-weight: 700;
+
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.8));
+}
+
+.home .card .animated-text.name::after{
+    content: "GUILHERME H. SCARPEL";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    z-index: 1000;
+}
+
+.home .card .i-am, .home .card .hi{
+    display: flex;
+}
+
+.home .card .adjectives{
+    position: relative;
+    margin-left: -5px;
+}
+
+.home .hand-emoji{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    
+    height: 60vh;
+    transform-origin: center bottom;
+
+    animation: wave 1.2s ease-out forwards;
+}
+
+@media (max-width: 500px){
+    .home .page-arrow{
+        display: none;
+    }
+
+    .home .hand-emoji{
+        left: 53%;
+        max-width: 75vw;
+        max-height: 80vh;
+        height: auto;
+    }
+
+    .home .card .animated-text{
+        font-size: 6vw;
+        margin: 5px;
+        letter-spacing: -0.1vw;
+    }
+
+    .home .card .animated-text.name{
+        flex-wrap: wrap;
+        font-size: 11vw;
+        line-height: 11vw;
+        width: 85%;
+        height: 21vw;
+        margin: -5px 0;
+    }
+
+    .home .card .animated-text.my-name-is{
+        margin-left: -1px;
+    }
+
+    .home .i-am .adjectives{
+        margin-left: -10px;
+    }
+
+    .home .text-carousel .underline{
+        bottom: 5px;
+        height: 3px;
+    }
+
+    .home .bubbles{
+        display: none;
+    }
+
+    .home .card{
+        width: 100%;
+    }
+}
+
+@keyframes wave{
+    0%{
+        transform: translate(-50%, -55%) scale(0);
+        opacity: 0;
+    }
+    25%{
+        transform: translate(-50%, -55%) scale(1);
+        opacity: 1;
+    }
+    40%{
+        transform: translate(-50%, -55%) scale(1) rotate(-15deg);
+        opacity: 1;
+    }
+    60%{
+        transform: translate(-50%, -55%) scale(1) rotate(15deg);
+        opacity: 1;
+    }
+    85%{
+        transform: translate(-50%, -55%) scale(1) rotate(-10deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-50%, -90%) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes hide-over{
+    from{
+        height: 100vh;
+    }
+    to{
+        height: 0;
+    }
+}

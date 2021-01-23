@@ -1,0 +1,94 @@
+.skill-card{
+    font-family: "Poppins";
+
+    display: block;
+    position: relative;
+
+    animation: pop-up 0.5s ease-out;
+    cursor: pointer;
+
+    transition: opacity 0.5s ease-out;
+}
+
+.skill-card:hover{
+    opacity: 1 !important;
+}
+
+.skill-icon, .skill-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    user-select: none;
+    opacity: 1;
+
+    transition: all 0.5s ease-out 0.2s;
+}
+
+.skill-percentage{
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    user-select: none;
+    font-size: 0.5em;
+    letter-spacing: -1px;
+    font-weight: 500;
+    opacity: 0;
+
+    transition: all 0.5s ease-out;
+}
+
+.skill-card:hover .skill-icon, .skill-card:hover .skill-text{
+    transition-delay: 0;
+    opacity: 0;
+}
+
+.skill-card:hover .skill-percentage{
+    transition-delay: 0.2s;
+    opacity: 1;
+}
+
+.skill-text{
+    font-family: inherit;
+
+    top: 50%;
+    left: 50%;
+
+    font-size: 0.55em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.skill-icon{
+    top: 51%;
+    left: 51%;
+}
+
+.skill-circle, .skill-circle-inside{
+    fill: none;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+
+    stroke-linecap: round;
+}
+
+.skill-circle-inside{
+    animation: cu 1s ease-out reverse;
+}
+
+.skill-undercircle{
+    fill: transparent;
+    stroke: rgb(26, 26, 26);
+    stroke-dashoffset: 0;
+}
+
+@keyframes cu{
+    to{
+        stroke-dashoffset: 213;
+    }
+}

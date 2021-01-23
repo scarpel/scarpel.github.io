@@ -1,0 +1,57 @@
+.glitch-text{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    font-size: 3.5vw;
+
+    animation: shrink 0.6s ease-out 1.5s forwards;
+
+    color: var(--black);
+}
+
+.glitch-text.quick{
+    animation-delay: 0ms;
+    animation-duration: 0ms;
+}
+
+.glitch-text.quick .repetitions{
+    display: none;
+}
+
+.glitch-text .auxiliar-text{
+    -webkit-text-stroke: 1px var(--black);
+}
+
+@media (max-width: 449px){
+    .glitch-text{
+        font-size: 4.5vw;
+        animation: small-shrink 0.6s ease-out 1.5s forwards;
+    }
+
+    .glitch-text span{
+        line-height: 0.9em;
+    }
+}
+
+@keyframes shrink{
+    to{
+        top: calc(min(65px, 10vw) + 5px);
+        right: calc(min(65px, 10vw) + 50px);
+        transform: translate(0,0);
+
+        font-size: 0.75em;
+        font-weight: 600;
+    }
+}
+
+@keyframes small-shrink{
+    to{
+        top: calc(min(65px, 10vw) + 5px);
+        transform: translate(50%, 0%);
+
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+}

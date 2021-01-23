@@ -1,0 +1,139 @@
+.bubbles{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    width: 40vw;
+    height: 40vw;
+}
+
+.bubbles *{
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 10px rgba(32, 0, 15, 0.5));
+    z-index: 5;
+}
+
+.bubbles .b-1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30vw;
+    height: 30vw;
+
+    animation: bubble1 0.7s ease;
+}
+
+.bubbles .b-2{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+
+    width: 7vw;
+    height: 7vw;
+
+    opacity: 0;
+    animation: bubble2 1.5s ease 0.5s forwards;
+}
+
+.bubbles .b-3{
+    position: absolute;
+    right: 12%;
+    bottom: 19%;
+
+    width: 5vw;
+    height: 5vw;
+
+    opacity: 0;
+    animation: bubble3 1.2s ease 1s forwards;
+}
+
+.bubbles .b-4{
+    position: absolute;
+    right: 18%;
+    top: 0%;
+
+    width: 8vw;
+    height: 8vw;
+    
+    z-index: 2;
+
+    opacity: 0;
+    animation: bubble4 1.2s ease 0.8s forwards;
+}
+
+@keyframes bubble1{
+    0%{
+        transform: translate(-50%, -50%) scale(0);
+    }
+    60%{
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes bubble2{
+    0%{
+        transform: translate(30%, 30%) scale(0);
+        opacity: 0;
+        z-index: 2;
+    }
+    70%{
+        transform: translate(420%, -350%) scale(1);
+        z-index: 30;
+        opacity: 1;
+        z-index: 2;
+    }
+    71%{
+        z-index: 30;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes bubble3{
+    0%{
+        transform: translate(0,0) scale(0);
+        opacity: 0;
+        z-index: 2;
+    }
+    50%{
+        transform: translate(-600% , -400%) scale(1);
+        z-index: 30;
+        opacity: 1;
+        z-index: 2;
+    }
+    51%{
+        z-index: 30;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes bubble4{
+    0%{
+        transform: translate(0,0) scale(0);
+        opacity: 0;
+        z-index: 30;
+    }
+    5%{
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-320% , 370%) scale(1);
+        z-index: 30;
+        opacity: 1;
+    }
+    51%{
+        z-index: 2;
+    }
+    100%{
+        opacity: 1;
+    }
+}

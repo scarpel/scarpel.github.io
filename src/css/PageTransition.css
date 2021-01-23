@@ -1,0 +1,55 @@
+.page-transition{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.page-transition.left .page-slider{
+    transform-origin: left !important;
+}
+
+.page-transition.right .page-slider{
+    transform-origin: right !important;
+}
+
+.page-transition .page-slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    transform: scaleX(0);
+}
+
+.page-transition .page-slider.black{
+    background-color: var(--black);
+    animation: slide 0.7s ease-out forwards;
+}
+
+.page-transition .page-slider.white{
+    background-color: var(--white);
+    animation: slide 0.75s ease-out 0.25s forwards;
+}
+
+.page-transition .page-slider.color{
+    background-color: cyan;
+    animation: slide 0.75s ease-out 0.5s forwards;
+}
+
+@keyframes slide{
+    from{
+        transform: scaleX(0)
+    }
+    to{
+        transform: scaleX(1);
+    }
+}

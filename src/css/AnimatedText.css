@@ -1,0 +1,31 @@
+.animated-text{
+    display: flex;
+    white-space: pre;
+    width: fit-content;
+}
+
+.animated-text.done .letter{
+    opacity: 1;
+    animation: none !important;
+    transform: translateY(0);
+}
+
+.animated-text .letter{
+    opacity: 0;
+    animation: show-letter 0.7s ease-out forwards;
+}
+
+@keyframes show-letter{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    30%{
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

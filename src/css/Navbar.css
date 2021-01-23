@@ -1,0 +1,62 @@
+.navbar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 0 min(60px, 10vw);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+}
+
+.navbar .link:focus{
+    outline: 0;
+}
+
+.navbar .logo{
+    width: 40px;
+    z-index: 150;
+
+    user-select: none;
+}
+
+.navbar .menu-icon{
+    position: relative;
+
+    font-size: 35px;
+    transition: background-color 0.5 ease-out;
+
+    z-index: 150;
+}
+
+.navbar .menu-icon.clicked div{
+    background-color: var(--black);
+  }
+
+.navbar.dark .logo{
+    fill: var(--black);
+}
+
+.navbar.dark .menu-icon div{
+    background-color: var(--black);
+}
+
+.navbar.dark .menu-icon.clicked div{
+    background-color: var(--white);
+}
+
+.navbar.dark .menu{
+    background-color: var(--black);
+}
+
+.navbar.dark .menu nav{
+    color: var(--white);
+}
+
+@media (max-width:500px){
+    .navbar{
+        padding: 0 min(30px, 8vw);
+    }
+}
