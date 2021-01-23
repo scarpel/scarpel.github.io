@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/scarpel.github.io/static/css/main.af3d05db.chunk.css",
+    "main.js": "/scarpel.github.io/static/js/main.9c9a1b04.chunk.js",
+    "main.js.map": "/scarpel.github.io/static/js/main.9c9a1b04.chunk.js.map",
+    "runtime-main.js": "/scarpel.github.io/static/js/runtime-main.e6486b41.js",
+    "runtime-main.js.map": "/scarpel.github.io/static/js/runtime-main.e6486b41.js.map",
+    "static/js/2.f5505d4f.chunk.js": "/scarpel.github.io/static/js/2.f5505d4f.chunk.js",
+    "static/js/2.f5505d4f.chunk.js.map": "/scarpel.github.io/static/js/2.f5505d4f.chunk.js.map",
+    "static/js/3.ec3e9308.chunk.js": "/scarpel.github.io/static/js/3.ec3e9308.chunk.js",
+    "static/js/3.ec3e9308.chunk.js.map": "/scarpel.github.io/static/js/3.ec3e9308.chunk.js.map",
+    "index.html": "/scarpel.github.io/index.html",
+    "static/css/main.af3d05db.chunk.css.map": "/scarpel.github.io/static/css/main.af3d05db.chunk.css.map",
+    "static/js/2.f5505d4f.chunk.js.LICENSE.txt": "/scarpel.github.io/static/js/2.f5505d4f.chunk.js.LICENSE.txt",
+    "static/media/hand.98a649d7.png": "/scarpel.github.io/static/media/hand.98a649d7.png",
+    "static/media/logo.95a7fb08.svg": "/scarpel.github.io/static/media/logo.95a7fb08.svg",
+    "static/media/me.769ecc93.jpg": "/scarpel.github.io/static/media/me.769ecc93.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6486b41.js",
+    "static/js/2.f5505d4f.chunk.js",
+    "static/css/main.af3d05db.chunk.css",
+    "static/js/main.9c9a1b04.chunk.js"
+  ]
+}
