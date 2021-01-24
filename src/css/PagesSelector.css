@@ -5,11 +5,14 @@
     transform: translateX(-50%);
 
     display: flex;
-    gap: 20px;
 
     z-index: 1000;
 
     user-select: none;
+}
+
+.pages-selector *:not(:last-child){
+    margin-right: 20px;
 }
 
 .pages-selector label{

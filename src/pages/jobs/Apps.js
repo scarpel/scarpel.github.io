@@ -1,12 +1,14 @@
 import { useContext, useEffect, useRef, useState } from "react"
 import AppCard from "../../components/AppCard"
-import BRIEF_APPS from "../../datasets/jobs/briefApps"
 import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi"
-
-import "../../css/Apps.css"
 import { PagesContext } from "../../context/PagesContext"
 import { useHistory } from "react-router-dom"
 import PAGES_URL from "../../data/pagesURL"
+import { join } from "path"
+import { BRIEF_APPS_IMGS } from "../../data/imgPath"
+import BRIEF_APPS from "../../datasets/jobs/briefApps"
+
+import "../../css/Apps.css"
 
 export default function Apps() {
     const { lastAppIndex, setLastAppIndex, pageInfo } = useContext(PagesContext)
@@ -16,6 +18,7 @@ export default function Apps() {
     const history = useHistory()
     const currentApp = BRIEF_APPS[currentIndex]
     const appsLastIndex = BRIEF_APPS.length-1
+    const path = join(process.env.PUBLIC_URL, BRIEF_APPS_IMGS)
 
     const next = () => {
         const n = currentIndexRef.current+1
@@ -71,6 +74,7 @@ export default function Apps() {
                     setLastAppIndex(currentIndex)
                     history.push(`${PAGES_URL.JOBS}/${currentApp.id}`)
                 }}
+                path={path}
             />
             <div className="apps-index">
                 <span className="current-index">{`${currentIndex+1}`.padStart(2, "0")}</span>

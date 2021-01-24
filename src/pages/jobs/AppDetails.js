@@ -19,7 +19,7 @@ function AppDetails(){
     const [ app, setApp ] = useState(undefined)
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isImgLoaded, setIsImgLoaded ] = useState(false)
-    const mediaPath = join(APPS_IMGS, appID)
+    const mediaPath = join(process.env.PUBLIC_URL, APPS_IMGS, appID)
     const mainRef = useRef(undefined)
     const contentRef = useRef(undefined)
 
@@ -143,7 +143,7 @@ function AppDetails(){
             !isLoading && (
                 <>
                 <section className="info">
-                    <div className="tools">
+                    <div className="tools spaced-items">
                     {
                         app.tools.map((name, index) => {
                             const Icon = getToolIcon(name)

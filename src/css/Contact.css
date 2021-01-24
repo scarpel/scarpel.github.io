@@ -3,6 +3,7 @@
     width: calc(100vw - min(120px, 20vw)) !important;
 
     padding-top: 55px;
+    max-height: 700px;
 }
 
 .contact .animated-text{
@@ -43,8 +44,6 @@
 
 .contact .left-container .social{
     display: flex;
-    gap: 10px;
-
     margin-top: 5px;
 }
 
@@ -168,7 +167,7 @@
         flex-direction: column;
 
         font-size: 0.8em;
-        gap: 15px;
+        grid-gap: 15px;
     
         width: fit-content;
         height: fit-content;
@@ -201,6 +200,10 @@
 }
 
 @media (max-width: 720px){
+    .contact{
+        margin-top: -15px;    
+    }
+
     .contact .headline{
         height: fit-content;
         max-width: 90vw;

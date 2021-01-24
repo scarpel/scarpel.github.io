@@ -1,13 +1,16 @@
 .app-details{
     display: flex;
+    align-items: center;
 
     height: 95%;
+    max-height: 1000px;
     width: fit-content;
 
     padding: 45px 120px 70px 0;
     box-sizing: border-box;
 
     user-select: none;
+    background-color: burlywood;
 }
 
 .app-details .info{
@@ -18,6 +21,7 @@
 
     text-align: left;
     width: fit-content;
+    height: 100%;
 
     margin-right: 5vw;
     min-width: 25vw;
@@ -194,7 +198,7 @@
 }
 
 .app-details .galery .hollow-title{
-    top: 11%;
+    top: 4vw;
 
     color: transparent;
     -webkit-text-stroke: 1px var(--black);

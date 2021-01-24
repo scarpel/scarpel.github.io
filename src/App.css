@@ -1,14 +1,14 @@
 html, body{
   overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  /* scrollbar-width: thin !important;
-  scrollbar-color: var(--sobre) var(--black); */
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--sobre) var(--black);
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 ::selection{
   color: var(--black);
@@ -149,6 +149,10 @@ html, body{
   transform: translateY(-50%);
 
   z-index: 500;
+}
+
+.spaced-items *:not(:last-child){
+  margin-right: 10px;
 }
 
 @media (max-width: 800px){

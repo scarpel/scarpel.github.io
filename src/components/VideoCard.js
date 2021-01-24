@@ -1,14 +1,15 @@
 import "../css/VideoCard.css"
 import getToolIcon from "../datasets/toolIcons"
+import { join } from "path"
 
 export default function VideoCard(props) {
-    const { info, style={} } = props
+    const { info, style={}, path = "" } = props
 
     return (
         <div className="video-card" style={style}>
             <div className="video-media">
                 <a href={info.link} target="_blank" rel="noopener noreferrer">
-                    <img src={ info.img } alt="video thumb"/>
+                    <img src={ join(path, info.img) } alt="video thumb"/>
                 </a>
                 <div className="duration"> { info.duration } </div>
             </div>

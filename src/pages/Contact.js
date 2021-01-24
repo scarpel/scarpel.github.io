@@ -62,7 +62,7 @@ function Contact() {
                             { PERSONAL_INFO.phone }
                         </SimpleInfo>
                         <SimpleInfo className="social-container" title="Social">
-                            <div className="social">
+                            <div className="social spaced-items">
                             {
                                 PERSONAL_INFO.social.map(([name, link], index) => {
                                     const Icon = getSocialIcon(name)

@@ -50,8 +50,8 @@
     top: 50%;
     transform: translateY(-50%);
 
-    width: 7vh;
-    height: 7vh;
+    width: min(45px, 7vh);
+    height: min(45px, 7vh);
     padding: 0;
 
     font-size: 7vh;
@@ -61,6 +61,8 @@
 
     transition: all 0.5s ease-out, opacity 0.8s ease-out;
     cursor: pointer;
+
+    z-index: 500;
 }
 
 .apps .arrow-btn:hover{
@@ -111,10 +113,6 @@
     .apps .apps-index{
         display: none;
     }
-
-    .apps .arrow-btn{
-        z-index: 100;
-    }
 }
 
 @keyframes swipe-left{
@@ -125,6 +123,12 @@
     to{
         transform: translateX(0) skewX(0);
         opacity: 1;
+    }
+}
+
+@media (max-width: 500px){
+    .apps{
+        padding-bottom: 25px;
     }
 }
 

@@ -1,6 +1,6 @@
 .presentation{
     width: 45vw !important;
-    height: 72vh;
+    height: min(650px, 72vh) !important;
 }
 
 .presentation .left-card{
@@ -12,7 +12,7 @@
     position: absolute;
     left: 10vw;
     bottom: 5vw;
-    height: 65vh;
+    height: min(600px, 65vh);
 
     z-index: 10;
 
@@ -44,7 +44,7 @@
 .presentation .additional-info{
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: 0px; 
 
     font-size: max(2.3em, 3.5vw);
     font-weight: 600;

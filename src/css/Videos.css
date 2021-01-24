@@ -5,12 +5,13 @@
     grid-template-rows: repeat(2, 175px);
     grid-template-columns: repeat( auto-fit, 550px );
     grid-auto-flow: column;
-    gap: 15px;
+    grid-gap: 15px;
     column-gap: 45px;
 }
 
 .videos .videos-container .video-card{
     opacity: 0;
+    max-height: 400px;
     animation: show-video 0.5s ease-out forwards;
 }
 

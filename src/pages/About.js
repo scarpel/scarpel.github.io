@@ -10,9 +10,11 @@ import certificationAnimation from "../media/lottie/certificade.json"
 import useWindowSize from "../hooks/useWindowSize"
 import usePeekABoo from "../hooks/usePeekABoo"
 import certificados from "../datasets/certificados"
+import { join } from "path"
 
 import "../css/Page.css"
 import "../css/About.css"
+import { CERTFICADES_MINIATURE } from "../data/imgPath"
 
 function About() {
     const { setPageInfo } = useContext(PagesContext)
@@ -100,7 +102,7 @@ function About() {
                         rendeu alguns <em>certificados</em>...
                     </p>
                 </section>
-                <Certificades data={certificados}/>
+                <Certificades data={certificados} path={join(process.env.PUBLIC_URL, CERTFICADES_MINIATURE)}/>
             </div>
         </div>
     )

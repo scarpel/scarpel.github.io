@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 15px;
+    grid-gap: 15px;
 }
 
 .skills .cards .card-placeholder .icons-card{
@@ -67,7 +67,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 15px;
+        grid-gap: 15px;
         padding-right: 10vw;
         margin-left: -3vw;
     }

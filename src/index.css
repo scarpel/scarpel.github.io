@@ -10,6 +10,10 @@
   --app-details: #8f9690;
   --main-color: #050505;
   --highlight-color: #050505;
+
+  --image-grid-height: 50vh;
+  --image-grid-half-height: calc( var(--image-grid-height)/2 * 1px);
+  --image-grid-half-height: calc( var(--image-grid-height)*2 * 1px);
 }
 
 body {

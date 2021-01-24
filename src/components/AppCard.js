@@ -1,13 +1,12 @@
 import getToolIcon from "../datasets/toolIcons"
 import lottie from "lottie-web"
-import { BRIEF_APPS_IMGS } from "../data/imgPath"
 import { join } from "path"
 
 import "../css/AppCard.css"
 import { useEffect, useRef } from "react"
 
 export default function AppCard(props) {
-    const { item, numTools = 5, style = {}, className="", handleClick = () => {} } = props
+    const { item, numTools = 5, style = {}, className="", handleClick = () => {}, path="" } = props
     const lottieRef = useRef()
 
     useEffect(() => {
@@ -16,7 +15,7 @@ export default function AppCard(props) {
                 container: lottieRef.current,
                 autoplay: true,
                 loop: true,
-                path: join(BRIEF_APPS_IMGS, item.animationName)
+                path: join(path, item.animationName)
             })
             return () => animation.stop()
         }
@@ -33,7 +32,7 @@ export default function AppCard(props) {
             <div className="app-img" ref={lottieRef}>
             </div>
             <section className="app-info">
-                <div className={`app-tools ${item.tools.length>numTools? "full":""}`}>
+                <div className={`app-tools spaced-items ${item.tools.length>numTools? "full":""}`}>
                 {
                     getToolsArray().map((name, index) => {
                         const Icon = getToolIcon(name)

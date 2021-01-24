@@ -4,16 +4,18 @@ import { panoramas, portraits, squares } from "../../datasets/design_imgs"
 import AnimatedText from "../../components/AnimatedText"
 import { loadAllImages } from "../../utils/imagesLoader"
 import { join } from "path"
+import { DESIGN_IMGS } from "../../data/imgPath"
+import { PagesContext } from "../../context/PagesContext"
+
 
 import "../../css/Designs.css"
 import "../../css/StandardJobPage.css"
 import "../../css/ImageGrid.css"
-import { PagesContext } from "../../context/PagesContext"
 
 export default function Designs(){
     const [ isLoading, setIsLoading ] = useState(true)
     const { updateSize } = useContext(PagesContext)
-    const path = "/images/design/"
+    const path = join(process.env.PUBLIC_URL, DESIGN_IMGS)
 
     useEffect(() => {
         document.title = `GHS: Designs`
@@ -57,7 +59,6 @@ export default function Designs(){
                     <ImageGrid
                         data={{ squares, panoramas, portraits }}
                         path={path}
-                        // onClick={(e) => setImageElement(e.target)}
                     />
                 )
             }

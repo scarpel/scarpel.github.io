@@ -11,6 +11,10 @@
     z-index: 1000;
 }
 
+.navbar .right{
+    position: relative !important;
+}
+
 .navbar .link:focus{
     outline: 0;
 }

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, Redirect } from "react-router-dom"
 import { PagesContext } from "./context/PagesContext"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -27,8 +27,11 @@ function App() {
   }
 
   const handleWheel = (e) => {
-    window.scrollBy(e.deltaY<0?-deltaX:deltaX,0)
+    const scrolled = e.deltaY || e.deltaX
+    window.scrollBy(scrolled<0?-deltaX:deltaX,0)
   }
+
+  const handleTouch = e => console.log(e)
 
   useEffect(() => {
     window.addEventListener("wheel", handleWheel)
@@ -89,7 +92,9 @@ function App() {
             <Route exact path={PAGES_URL.JOBS} component={Jobs}/>
             <Route exact path={PAGES_URL.CONTACT} component={Contact}/>
             <Route path={`${PAGES_URL.JOBS}/:appID`} component={AppDetails}/>
-            <Route path="/" component={Home} />
+            <Route path="/">
+              <Redirect to="/"/>
+            </Route>
           </Switch>
         { pageInfo.blurryText && <BlurryText key={pageInfo.blurryText} text={pageInfo.blurryText}/> }
       </div>

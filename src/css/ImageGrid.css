@@ -1,8 +1,8 @@
 .image-grid{
     display: flex;
-    gap: 10px;
+    grid-gap: 10px;
 
-    height: calc(64vh + 10px);
+    height: calc(min(500px, 64vh) + 10px);
 }
 
 .image-grid.mock .square, .image-grid.mock .panorama, .image-grid.mock .portrait{
@@ -31,23 +31,23 @@
 }
 
 .image-grid .square{
-    width: 32vh;
-    height: 32vh;
+    width: min(250px, 32vh);
+    height: min(250px, 32vh);
 }
 
 .image-grid .panorama{
     width: auto;
-    height: 32vh;
+    height: min(250px, 32vh);
 }
 
 .image-grid .portrait{
-    width: 32vh;
+    width: min(250px, 32vh);
     height: 100%;
 }
 
 .image-grid .squares-panorama, .image-grid .squares-panorama-reversed, .image-grid .two-squares, .image-grid .squares,
 .image-grid .two-panoramas{
-    gap: 10px;
+    grid-gap: 10px;
 }
 
 .image-grid .squares-panorama, .image-grid .squares-panorama-reversed{
@@ -70,7 +70,7 @@
 }
 
 .image-grid .bigger-square img{
-    width: 64vh;
+    width: min(500px, 64vh);
     height: 100%;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .image-grid .bigger-panorama img{
-    width: 128vh;
+    width: min(1000px, 128vh);
     height: 100%;
 }
 

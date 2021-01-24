@@ -6,12 +6,15 @@ import { PagesContext } from "../../context/PagesContext"
 
 import "../../css/StandardJobPage.css"
 import "../../css/Videos.css"
+import { join } from "path"
+import { VIDEOS_IMGS } from "../../data/imgPath"
 
 export default function Videos() {
     const { updateSize, windowSize } = useContext(PagesContext)
     const mainRef = useRef(undefined)
     const infoRef = useRef(undefined)
     const containerRef = useRef(undefined)
+    const path = join(process.env.PUBLIC_URL, VIDEOS_IMGS)
 
     const handleGridRows = () => {
         if(windowSize.width>999){
@@ -47,7 +50,14 @@ export default function Videos() {
             </div>
             <div className="videos-container" ref={containerRef}>
                 {
-                    videos.map((video, index) => <VideoCard style={{animationDelay: `${150*(index+1)}ms`}} info={video} key={index} />)
+                    videos.map((video, index) => (
+                        <VideoCard 
+                            style={{animationDelay: `${150*(index+1)}ms`}} 
+                            info={video} 
+                            key={index}
+                            path={path}
+                        />
+                    ))
                 }
             </div>
         </div>

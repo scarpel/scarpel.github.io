@@ -1,7 +1,7 @@
 .app-card{
     display: grid;
     grid-template-columns: 40% 60%;
-    gap: 1.5vw;
+    gap: min(25px, 1.5vw);
     align-items: flex-start;
 
     height: fit-content;
@@ -33,12 +33,11 @@
 .app-card .app-info .app-tools{
     position: relative;
     display: flex;
-    gap: 15px;
 
-    font-size: 2vw;
+    font-size: max(1.8em, 2vw);
     line-height: 2vw;
 
-    margin-bottom: 2.5vh;
+    margin-bottom: min(20px, 2.5vh);
     padding-left: 5px;
 
     width: fit-content;
@@ -64,7 +63,10 @@
 }
 
 .app-card .app-info .app-desc{
-    margin: 2vh 0 4vh 0;
+    margin: 0;
+    margin-top: min(15px, 2vw);
+    margin-bottom: min(30px, 4vh);
+
     font-size: 1.5vw;
     letter-spacing: -0.05vw;
     line-height: 2vw;

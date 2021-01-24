@@ -5,6 +5,7 @@ export default function Menu(props) {
 
     return (
         <div className={`menu ${showing && "showing"}`}>
+            <div className="menu-container"></div>
             <nav>
                 <ul>
                     {

@@ -37,6 +37,12 @@
     animation-duration: 0.5s;
 }
 
+@media (max-width: 1000px){
+    .blurry-text .letter{
+        opacity: 0.25;
+    }
+}
+
 @keyframes drop-letter{
     from{
         transform: translateY(-250px);
