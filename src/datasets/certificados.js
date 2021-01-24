@@ -3,7 +3,7 @@ import { join } from "path"
 
 const certificados = [
     {
-        name:"The JavaScript Bootcamp meu cu Mauie",
+        name:"The JavaScript Bootcamp",
         description:"Curso de 12 horas feito no site Scrimba, o certificado está abaixo. ",
         link:"https://scrimba.com/certificate/uakVqahB/gjavascript",
         img: "js.jpg"
