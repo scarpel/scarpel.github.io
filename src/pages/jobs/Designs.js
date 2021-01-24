@@ -38,13 +38,13 @@ export default function Designs(){
 
             {
                 isLoading?
-                    (<div className="image-grid mock">
-                        <div className="two-squares">
+                    (<div className="image-grid mock spaced-items">
+                        <div className="two-squares spaced-items-vertical">
                             <div className="square"></div>
                             <div className="square" style={{animationDelay: "0.1s"}}></div>
                         </div>
-                        <div className="squares-panorama">
-                            <div className="squares">
+                        <div className="squares-panorama spaced-items-vertical">
+                            <div className="squares spaced-items">
                                 <div className="square" style={{animationDelay: "0.2s"}}></div>
                                 <div className="square" style={{animationDelay: "0.4s"}}></div>
                             </div>

@@ -129,8 +129,8 @@
 }
 
 @media (max-width: 500px){
-    .apps{
-        padding-bottom: 25px;
+    .apps .app-card{
+        margin-top: -50px;
     }
 }
 

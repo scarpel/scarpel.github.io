@@ -38,7 +38,7 @@
 @keyframes shrink{
     to{
         top: calc(min(65px, 10vw) + 5px);
-        right: calc(min(65px, 10vw) + 50px);
+        right: calc(min(65px, 10vw) + 40px);
         transform: translate(0,0);
 
         font-size: 0.75em;
@@ -48,11 +48,11 @@
 
 @keyframes small-shrink{
     to{
-        top: calc(min(65px, 10vw) + 15px);
-        right: 50% !important;
-        transform: translate(50%,0) !important;
+        top: calc(min(65px, 10vw) + 5px);
+        right: calc(min(65px, 10vw) + 50px);
+        transform: translate(5%,0);
 
-        font-size: 2.5vw;
+        font-size: 3vw;
         font-weight: 600;
     }
 }

@@ -13,12 +13,14 @@ import "../../css/Apps.css"
 export default function Apps() {
     const { lastAppIndex, setLastAppIndex, pageInfo } = useContext(PagesContext)
     const [currentIndex, setCurrentIndex] = useState(0)
-    const currentIndexRef = useRef(currentIndex)
-    const currentDirectionRef = useRef("right")
     const history = useHistory()
     const currentApp = BRIEF_APPS[currentIndex]
     const appsLastIndex = BRIEF_APPS.length-1
     const path = join(process.env.PUBLIC_URL, BRIEF_APPS_IMGS)
+
+    const currentTouchStart = useRef(0)
+    const currentIndexRef = useRef(currentIndex)
+    const currentDirectionRef = useRef("right")
 
     const next = () => {
         const n = currentIndexRef.current+1
@@ -45,8 +47,16 @@ export default function Apps() {
         else previous()
     }
 
+    const handleTouchStart = (e) => currentTouchStart.current = e.touches[0].clientX
+
+    const handleTouchEnd = (e) => {
+        if((currentTouchStart.current - e.changedTouches[0].clientX)>0) next()
+        else previous()
+    }
+
     useEffect(() => {
         document.title = `GHS: Apps`
+        const isMobile = "ontouchstart" in window
 
         if(lastAppIndex){
             if(pageInfo.quick){
@@ -56,8 +66,19 @@ export default function Apps() {
             setLastAppIndex(undefined)
         }
 
+        if(isMobile){
+            window.addEventListener("touchstart", handleTouchStart)
+            window.addEventListener("touchend", handleTouchEnd)
+        }
+
         window.addEventListener("wheel", handleWheel)
-        return () => window.removeEventListener("wheel", handleWheel)
+        return () => {
+            window.removeEventListener("wheel", handleWheel)
+            if(isMobile){
+                window.removeEventListener("touchstart", handleTouchStart)
+                window.removeEventListener("touchend", handleTouchEnd)
+            }
+        }
     }, [])
 
     return (

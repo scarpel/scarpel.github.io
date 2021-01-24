@@ -68,6 +68,11 @@ function About() {
     useEffect(() => {
         document.title = `GHS: Sobre Mim`
         setPageInfo({ name: "sobre mim", mainColor: "var(--sobre)", blurryText: "about" })
+        if("ontouchstart" in window){
+            handlePeekABoo(aboutRef, statue, statueAnimation)
+            handlePeekABoo(educationRef, graduation, graduationAnimation)
+            handlePeekABoo(certificadesRef, certificade, certificationAnimation)
+        }
     }, [])
 
     return (
