@@ -61,7 +61,6 @@
 .image-grid .two-squares{
     display: flex;
     flex-direction: column;
-    background-color: darkgreen;
 }
 
 .image-grid .bigger-square img{

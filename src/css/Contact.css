@@ -144,7 +144,6 @@
 
     max-width: 1000px;
     max-height: 1000px;
-    /* background-color: blue; */
 }
 
 @media (max-width: 500px){
@@ -200,12 +199,25 @@
 
 @media (max-width: 720px){
     .contact{
-        margin-top: -15px;    
+        margin-top: -30px;    
+    }
+
+    .contact .left-container{
+        grid-template-rows: 40% 60%;
+    }
+
+    .contact .left-container .bottom{
+        column-gap: 0;
+        row-gap: 0;
     }
 
     .contact .headline{
         height: fit-content;
         max-width: 90vw;
+    }
+
+    .contact .bottom .simple-info:not(:last-child){
+        margin-bottom: 15px;
     }
 }
 

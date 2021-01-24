@@ -1,7 +1,6 @@
 .video-card{
     display: flex;
     align-items: center;
-    /* gap: 15px; */
 
     height: 175px;
     width: 550px;
@@ -104,7 +103,6 @@
         width: min(90vw, 300px);
         background-color: var(--white);
         border-radius: 15px;
-        /* gap: 5px; */
     
         padding: 15px 10px;
         box-sizing: border-box;
@@ -119,10 +117,15 @@
         height: fit-content;
     }
 
+    .video-card .video-media .duration{
+        bottom: 15px;
+        right: 25px;
+    }
+
     .video-card .video-info{
         width: 90%;
-        margin: auto;
-        margin-top: 15px;
+        /* margin: auto; */
+        /* margin-top: 15px; */
         height: 100%;
     }
 
@@ -145,4 +148,10 @@
         justify-content: center;
     }
 
+}
+
+@media (min-width: 1000px){
+    .video-card .video-media{
+        margin-right: 15px;
+    }
 }

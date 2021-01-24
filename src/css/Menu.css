@@ -16,8 +16,10 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
 
-    width: max(850px, min(900px, max(65vw, 65vh)));
-    height: max(850px, min(900px, max(65vw, 65vh)));
+    width: max(800px, max(70vw, 70vh));
+    height: max(800px, max(70vw, 70vh));
+    max-width: 1200px;
+    max-height: 1200px;
     background-color: var(--white);
     border-radius: 50%;
 

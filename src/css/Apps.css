@@ -20,15 +20,15 @@
 .apps .apps-index{
     position: absolute;
     left: 5%;
-    bottom: 10%;
+    bottom: 0%;
 
     display: flex;
     gap: 15px;
 
     color: var(--white);
-    font-size: 18vh;
+    font-size: min(12em, 12vw);
     font-weight: 500;
-    letter-spacing: -1.5vh;
+    letter-spacing: -1vw;
 
     width: fit-content;
 
@@ -90,12 +90,14 @@
 @media(max-width: 499px){
     .apps{
         width: calc(100vw - min(50px, 8vw)) !important;
+        margin-top: 0 !important;
     }
 }
 
 @media (min-width:499px) and (max-width: 700px){
     .apps{
         width: calc(100vw - min(170px, 16vw)) !important;
+        margin-top: 0px;
     }
 }
 
