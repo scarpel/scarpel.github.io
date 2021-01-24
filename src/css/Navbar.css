@@ -37,7 +37,7 @@
 
 .navbar .menu-icon.clicked div{
     background-color: var(--black);
-  }
+}
 
 .navbar.dark .logo{
     fill: var(--black);
@@ -51,7 +51,7 @@
     background-color: var(--white);
 }
 
-.navbar.dark .menu{
+.navbar.dark .menu .menu-container{
     background-color: var(--black);
 }
 

@@ -1,7 +1,6 @@
 .job-page{
     position: relative;
     display: flex;
-    gap: 4vw !important;
 
     margin-top: 25px;
     margin-right: 50px;
@@ -12,6 +11,7 @@
     width: 25vw;
     text-align: left;
     height: 100%;
+    margin-right: min(50px, 5vw);
 }
 
 .job-page .job-desc h1, .job-page .job-desc .animated-text{

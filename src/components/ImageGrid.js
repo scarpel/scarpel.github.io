@@ -5,7 +5,7 @@ import "../css/ImageGrid.css"
 
 export default function ImageGrid(props) {
     const { squares = [], panoramas = [], portraits = [] } = props.data
-    const { path = "", onClick = (e) => {console.log(e.target)} } = props
+    const { path = "", onClick = () => {} } = props
 
     const getIMGPath = (src) => join(path, src)
 
@@ -16,8 +16,8 @@ export default function ImageGrid(props) {
                 info.panoramaReverse = !info.panoramaReverse
 
                 return (
-                    <div key={`sp-${counters[0]}`} className={`squares-panorama${ info.panoramaReverse ? "" : "-reversed"}`}>
-                        <div className="squares">
+                    <div key={`sp-${counters[0]}`} className={`squares-panorama spaced-items-vertical " ${ info.panoramaReverse ? "" : "-reversed"}`}>
+                        <div className="squares spaced-items">
                             <img className="square" key={`s-${counters[0]--}`} alt="square" onClick={onClick} src={getIMGPath(squares[positions[0]++])}/>
                             <img className="square" key={`s-${counters[0]--}`} alt="square" onClick={onClick} src={getIMGPath(squares[positions[0]++])}/>
                         </div>
@@ -25,7 +25,7 @@ export default function ImageGrid(props) {
                     </div>
                 )
             }else return (
-                <div key={`ts-${counters[0]}`} className="two-squares">
+                <div key={`ts-${counters[0]}`} className="two-squares spaced-items-vertical">
                     <img className="square" key={`s-${counters[0]--}`} alt="square" onClick={onClick} src={getIMGPath(squares[positions[0]++])}/>
                     <img className="square" key={`s-${counters[0]--}`} alt="square" onClick={onClick} src={getIMGPath(squares[positions[0]++])}/>
                 </div>
@@ -42,7 +42,7 @@ export default function ImageGrid(props) {
     const getPanorama = (counters, positions) => {
         if(counters[1]>1){
             return (
-                <div key={`tp-${counters[1]}`} className="two-panoramas">
+                <div key={`tp-${counters[1]}`} className="two-panoramas spaced-items-vertical">
                     <img className="panorama" key={`pa-${counters[1]--}`} alt="panorama" onClick={onClick} src={getIMGPath(panoramas[positions[1]++])}/>
                     <img className="panorama" key={`pa-${counters[1]--}`} alt="panorama" onClick={onClick} src={getIMGPath(panoramas[positions[1]++])}/>
                 </div>
@@ -95,7 +95,7 @@ export default function ImageGrid(props) {
     const gridComponents = useState(getGrid())[0]
 
     return (
-        <div className="image-grid">
+        <div className="image-grid spaced-items">
             {
                 [...gridComponents]
             }

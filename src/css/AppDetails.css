@@ -10,7 +10,6 @@
     box-sizing: border-box;
 
     user-select: none;
-    background-color: burlywood;
 }
 
 .app-details .info{
@@ -32,7 +31,6 @@
 .app-details .info .tools{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
 
     font-size: 2.25vw;
     margin-bottom: 1.5vh;
@@ -72,7 +70,6 @@
 .app-details .info .links{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     width: 100%;
 }
 
@@ -95,7 +92,6 @@
 
 .app-details .content{
     display: flex;
-    gap: 2vw;
 
     margin-right: 5vw;
     height: 100%;

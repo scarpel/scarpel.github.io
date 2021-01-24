@@ -1,6 +1,5 @@
 .image-grid{
     display: flex;
-    grid-gap: 10px;
 
     height: calc(min(500px, 64vh) + 10px);
 }
@@ -45,11 +44,6 @@
     height: 100%;
 }
 
-.image-grid .squares-panorama, .image-grid .squares-panorama-reversed, .image-grid .two-squares, .image-grid .squares,
-.image-grid .two-panoramas{
-    grid-gap: 10px;
-}
-
 .image-grid .squares-panorama, .image-grid .squares-panorama-reversed{
     display: flex;
     flex-direction: column;
@@ -67,6 +61,7 @@
 .image-grid .two-squares{
     display: flex;
     flex-direction: column;
+    background-color: darkgreen;
 }
 
 .image-grid .bigger-square img{

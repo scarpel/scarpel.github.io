@@ -18,7 +18,7 @@ export default function VideoCard(props) {
                     <h1 className="video-name">{ info.name }</h1>
                 </a>
                 <p className="video-description">{ info.description }</p>
-                <div className="video-tools">
+                <div className="video-tools spaced-items">
                 {
                     info.tools.map((name, index) => {
                         const Icon = getToolIcon(name)

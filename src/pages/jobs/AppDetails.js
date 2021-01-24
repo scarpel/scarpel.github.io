@@ -154,7 +154,7 @@ function AppDetails(){
                     <h1 className="name">{app.name}</h1>
                     <p className="desc">{app.description}</p>
                     { app.links && (
-                        <div className="links">
+                        <div className="links spaced-items">
                         {
                             app.links.map(([name, link], index) => (
                                 <a 
@@ -172,7 +172,7 @@ function AppDetails(){
                         </div>
                     )}
                 </section>
-                <div className="content" ref={contentRef}>
+                <div className="content spaced-items" ref={contentRef}>
                 {
                     [...getContentElements()]
                 }
