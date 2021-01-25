@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/scarpel.github.io/static/css/main.5ea807d8.chunk.css",
+    "main.css": "/scarpel.github.io/static/css/main.b10f7b0d.chunk.css",
     "main.js": "/scarpel.github.io/static/js/main.1117394a.chunk.js",
     "main.js.map": "/scarpel.github.io/static/js/main.1117394a.chunk.js.map",
     "runtime-main.js": "/scarpel.github.io/static/js/runtime-main.e6486b41.js",
@@ -10,7 +10,7 @@
     "static/js/3.ec3e9308.chunk.js": "/scarpel.github.io/static/js/3.ec3e9308.chunk.js",
     "static/js/3.ec3e9308.chunk.js.map": "/scarpel.github.io/static/js/3.ec3e9308.chunk.js.map",
     "index.html": "/scarpel.github.io/index.html",
-    "static/css/main.5ea807d8.chunk.css.map": "/scarpel.github.io/static/css/main.5ea807d8.chunk.css.map",
+    "static/css/main.b10f7b0d.chunk.css.map": "/scarpel.github.io/static/css/main.b10f7b0d.chunk.css.map",
     "static/js/2.9c586e94.chunk.js.LICENSE.txt": "/scarpel.github.io/static/js/2.9c586e94.chunk.js.LICENSE.txt",
     "static/media/hand.98a649d7.png": "/scarpel.github.io/static/media/hand.98a649d7.png",
     "static/media/logo.95a7fb08.svg": "/scarpel.github.io/static/media/logo.95a7fb08.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.e6486b41.js",
     "static/js/2.9c586e94.chunk.js",
-    "static/css/main.5ea807d8.chunk.css",
+    "static/css/main.b10f7b0d.chunk.css",
     "static/js/main.1117394a.chunk.js"
   ]
 }
