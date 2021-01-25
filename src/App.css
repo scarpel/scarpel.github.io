@@ -159,12 +159,6 @@ html, body{
   margin-bottom: 10px;
 }
 
-@media (max-width: 800px){
-  html, body{
-    overflow-y: visible !important;
-  }
-}
-
 @keyframes show-zoom{
   from{
     height: 0;

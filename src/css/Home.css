@@ -121,7 +121,8 @@
     }
 
     .home .card{
-        width: 100%;
+        width: 90vw;
+        margin-left: max(-15px, -15%);
     }
 }
 

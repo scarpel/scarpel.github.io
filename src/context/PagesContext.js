@@ -9,6 +9,7 @@ function PagesContextProvider({children}) {
     const [ imageElement, _setImageElement ] = useState(undefined)
     const [ lastAppIndex, setLastAppIndex ] = useState(undefined)
     const windowSize = useWindowSize()
+    const isTouch = "ontouchstart" in window
 
     const setRef = (ref = undefined) => setCurrentRef(ref)
 
@@ -55,7 +56,8 @@ function PagesContextProvider({children}) {
                 windowSize,
                 updateSize,
                 lastAppIndex,
-                setLastAppIndex
+                setLastAppIndex,
+                isTouch
             }
         }>
             {

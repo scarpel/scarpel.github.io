@@ -15,7 +15,7 @@ import { loadAllImages } from "../../utils/imagesLoader"
 
 function AppDetails(){
     const { appID } = useParams()
-    const { setPageInfo, updateSize, windowSize } = useContext(PagesContext)
+    const { setPageInfo, updateSize, windowSize, isTouch } = useContext(PagesContext)
     const [ app, setApp ] = useState(undefined)
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isImgLoaded, setIsImgLoaded ] = useState(false)
@@ -138,7 +138,7 @@ function AppDetails(){
     }, [])
 
     return (
-        <div className="app-details" ref={mainRef}>
+        <div className={`app-details ${isTouch && "touch"}`} ref={mainRef}>
         {
             !isLoading && (
                 <>

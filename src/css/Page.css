@@ -10,7 +10,6 @@
 
 @media (max-width:500px){
     .page{
-        padding-left: min(30px, 4vw) !important;
-        padding-right: min(30px, 4vw) !important;
+        padding: 30px !important;
     }
 }

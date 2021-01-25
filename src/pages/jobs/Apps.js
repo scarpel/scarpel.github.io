@@ -92,7 +92,7 @@ export default function Apps() {
             </button>
             <AppCard 
                 key={currentIndex} 
-                item={currentApp} 
+                item={currentApp}
                 style={{animationName: `swipe-${currentDirectionRef.current}`}}
                 className={currentDirectionRef.current}
                 handleClick={() => {

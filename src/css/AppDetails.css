@@ -28,6 +28,10 @@
     transform: translateY(-5%);
 }
 
+.app-details.touch .info{
+    transform: translateY(-10%);
+}
+
 .app-details .info .tools{
     display: flex;
     flex-wrap: wrap;
@@ -211,6 +215,10 @@
     margin-top: 7%;
 
     z-index: 5;
+}
+
+.app-details.touch .galery .image-grid{
+    margin-top: 0;
 }
 
 .image-grid.mock .square, .image-grid.mock .panorama, .image-grid.mock .portrait{

@@ -14,7 +14,7 @@ export default function AppCard(props) {
             const animation = lottie.loadAnimation({
                 container: lottieRef.current,
                 autoplay: true,
-                loop: true,
+                loop: item.loop !== undefined? item.loop : true,
                 path: join(path, item.animationName)
             })
             return () => animation.stop()
