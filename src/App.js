@@ -92,7 +92,7 @@ function App() {
             <Route exact path={PAGES_URL.JOBS} component={Jobs}/>
             <Route exact path={PAGES_URL.CONTACT} component={Contact}/>
             <Route path={`${PAGES_URL.JOBS}/:appID`} component={AppDetails}/>
-            <Route path="/">
+            <Route path="*">
               <Redirect to="/"/>
             </Route>
           </Switch>
