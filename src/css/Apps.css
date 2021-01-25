@@ -89,21 +89,24 @@
 
 @media(max-width: 499px){
     .apps{
-        width: calc(100vw - min(50px, 8vw)) !important;
-        margin-top: 0 !important;
+        width: calc(100vw - 60px) !important;
+        margin-top: -80px !important;
+        padding: 0 !important;
+    }
+
+    .apps .arrow-btn{
+        display: none;
     }
 }
 
 @media (min-width:499px) and (max-width: 700px){
     .apps{
-        width: calc(100vw - min(170px, 16vw)) !important;
-        margin-top: 0px;
+        width: calc(100vw - 16vw) !important;
     }
 }
 
 @media (max-width: 700px){
     .apps{
-        margin-top: -5px;
         padding: 0 5vw;
     }
 
@@ -125,12 +128,6 @@
     to{
         transform: translateX(0) skewX(0);
         opacity: 1;
-    }
-}
-
-@media (max-width: 500px){
-    .apps .app-card{
-        margin-top: -100px;
     }
 }
 
