@@ -38,7 +38,7 @@
 @keyframes shrink{
     to{
         top: calc(min(65px, 10vw) + 5px);
-        right: calc(min(65px, 10vw) + 40px);
+        right: calc(min(65px, 10vw) + 50px);
         transform: translate(0,0);
 
         font-size: 0.75em;

@@ -22,7 +22,7 @@ const certificados = [
     {
         name:"Fisk: Have Fun 1",
         description:"Antigo, mas enfim.",
-        link: join(CERTFICADES_FULL, "fisk.png"),
+        link: join(process.env.PUBLIC_URL, CERTFICADES_FULL, "fisk.png"),
         img: "fisk.jpg"
     }
 ]
