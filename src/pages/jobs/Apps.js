@@ -50,8 +50,12 @@ export default function Apps() {
     const handleTouchStart = (e) => currentTouchStart.current = e.touches[0].clientX
 
     const handleTouchEnd = (e) => {
-        if((currentTouchStart.current - e.changedTouches[0].clientX)>0) next()
-        else previous()
+        const delta = currentTouchStart.current - e.changedTouches[0].clientX
+
+        if(delta){
+            if(delta>0) next()
+            else previous()
+        }
     }
 
     useEffect(() => {

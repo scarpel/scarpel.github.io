@@ -1,10 +1,10 @@
 .videos .videos-container{
     display: grid;
-    align-content: center;
 
-    grid-template-rows: repeat(2, 175px);
+    grid-template-rows: repeat(2, 175px) !important;
     grid-template-columns: repeat( auto-fit, 550px );
     grid-auto-flow: column;
+    gap: 20px;
 }
 
 .videos .videos-container .video-card{
@@ -44,11 +44,5 @@
     .videos .videos-container .video-card{
         opacity: 0;
         animation: show-bottom 0.5s ease-out forwards;
-    }
-}
-
-@media (min-width: 1000px){
-    .videos .videos-container .video-card{
-        margin-right: 50px;
     }
 }

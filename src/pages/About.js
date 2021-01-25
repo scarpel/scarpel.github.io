@@ -68,10 +68,15 @@ function About() {
     useEffect(() => {
         document.title = `GHS: Sobre Mim`
         setPageInfo({ name: "sobre mim", mainColor: "var(--sobre)", blurryText: "about" })
+        
         if("ontouchstart" in window){
-            handlePeekABoo(aboutRef, statue, statueAnimation)
-            handlePeekABoo(educationRef, graduation, graduationAnimation)
-            handlePeekABoo(certificadesRef, certificade, certificationAnimation)
+            const timeouts = [
+                setTimeout(() => handlePeekABoo(aboutRef, statue, statueAnimation), 2500),
+                setTimeout(() => handlePeekABoo(educationRef, graduation, graduationAnimation), 3000),
+                setTimeout(() => handlePeekABoo(certificadesRef, certificade, certificationAnimation), 3500)
+            ]
+
+            return () => timeouts.map(timeout => window.clearTimeout(timeout))
         }
     }, [])
 
