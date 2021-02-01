@@ -7,16 +7,19 @@ import PAGES_URL from "../../data/pagesURL"
 import { join } from "path"
 import { BRIEF_APPS_IMGS } from "../../data/imgPath"
 import BRIEF_APPS from "../../datasets/jobs/briefApps"
+import slideAnimation from "../../media/lottie/slide.json"
+import lottie from "lottie-web"
 
 import "../../css/Apps.css"
 
 export default function Apps() {
-    const { lastAppIndex, setLastAppIndex, pageInfo } = useContext(PagesContext)
+    const { lastAppIndex, setLastAppIndex, pageInfo, isTouch } = useContext(PagesContext)
     const [currentIndex, setCurrentIndex] = useState(0)
     const history = useHistory()
     const currentApp = BRIEF_APPS[currentIndex]
     const appsLastIndex = BRIEF_APPS.length-1
     const path = join(process.env.PUBLIC_URL, BRIEF_APPS_IMGS)
+    const slideRef = useRef(undefined)
 
     const currentTouchStart = useRef(0)
     const currentIndexRef = useRef(currentIndex)
@@ -60,7 +63,6 @@ export default function Apps() {
 
     useEffect(() => {
         document.title = `GHS: Apps`
-        const isMobile = "ontouchstart" in window
 
         if(lastAppIndex){
             if(pageInfo.quick){
@@ -70,15 +72,22 @@ export default function Apps() {
             setLastAppIndex(undefined)
         }
 
-        if(isMobile){
+        if(isTouch){
             window.addEventListener("touchstart", handleTouchStart)
             window.addEventListener("touchend", handleTouchEnd)
+
+            lottie.loadAnimation({
+                container: slideRef.current,
+                autoplay: true,
+                loop: 5,
+                animationData: slideAnimation
+            })
         }
 
         window.addEventListener("wheel", handleWheel)
         return () => {
             window.removeEventListener("wheel", handleWheel)
-            if(isMobile){
+            if(isTouch){
                 window.removeEventListener("touchstart", handleTouchStart)
                 window.removeEventListener("touchend", handleTouchEnd)
             }
@@ -108,6 +117,7 @@ export default function Apps() {
             <button className="arrow-btn right" onClick={next} disabled={currentIndex === appsLastIndex}>
                 <FiArrowRightCircle />
             </button>
+            <div className="slide" ref={slideRef}></div>
         </div>
     )
 }

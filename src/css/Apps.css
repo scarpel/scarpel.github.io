@@ -87,15 +87,33 @@
     right: 0;
 }
 
+.apps .slide{
+    position: absolute;
+    bottom: 50px;
+    left: 53%;
+    transform: translateX(-50%);
+
+    color: var(--white);
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 0.95em;
+
+    display: none;
+}
+
 @media(max-width: 499px){
     .apps{
         width: calc(100vw - 60px) !important;
-        margin-top: -80px !important;
+        margin-top: -75px !important;
         padding: 0 !important;
     }
 
     .apps .arrow-btn{
-        display: none;
+        display: none !important;
+    }
+
+    .apps .slide{
+        display: block;
     }
 }
 
