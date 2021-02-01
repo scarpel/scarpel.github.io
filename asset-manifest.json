@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/scarpel.github.io/static/css/main.9b6dde4e.chunk.css",
-    "main.js": "/scarpel.github.io/static/js/main.6f066892.chunk.js",
-    "main.js.map": "/scarpel.github.io/static/js/main.6f066892.chunk.js.map",
+    "main.js": "/scarpel.github.io/static/js/main.bfafb493.chunk.js",
+    "main.js.map": "/scarpel.github.io/static/js/main.bfafb493.chunk.js.map",
     "runtime-main.js": "/scarpel.github.io/static/js/runtime-main.b1201c05.js",
     "runtime-main.js.map": "/scarpel.github.io/static/js/runtime-main.b1201c05.js.map",
     "static/js/2.c2a560d7.chunk.js": "/scarpel.github.io/static/js/2.c2a560d7.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.b1201c05.js",
     "static/js/2.c2a560d7.chunk.js",
     "static/css/main.9b6dde4e.chunk.css",
-    "static/js/main.6f066892.chunk.js"
+    "static/js/main.bfafb493.chunk.js"
   ]
 }
