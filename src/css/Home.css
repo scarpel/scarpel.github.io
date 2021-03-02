@@ -28,7 +28,7 @@
 }
 
 .home .card .animated-text{
-    font-size: max(1.8em, 3.5vw);
+    font-size: max(1.8em, min(3.5vw, 11vh));
     margin: 5px;
     letter-spacing: -0.2vw;
 }

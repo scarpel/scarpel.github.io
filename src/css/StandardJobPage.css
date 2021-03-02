@@ -56,3 +56,9 @@
         line-height: 4.5vw;
     }
 }
+
+@media (max-width: 500px){
+    .job-page{
+        margin-left: -5px;
+    }
+}

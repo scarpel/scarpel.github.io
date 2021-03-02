@@ -3,6 +3,12 @@ import { join } from "path"
 
 const certificados = [
     {
+        name:"Typescript: The Complete Developer's Guide",
+        description:"Curso de 36 horas feito no site Udemy, o certificado está abaixo. ",
+        link:"https://www.udemy.com/certificate/UC-036f94aa-0da8-484d-9e68-c7b8000cd6c0/",
+        img: "typescript.jpg"
+    },
+    {
         name:"The Web Developer Bootcamp",
         description:"Curso de 36 horas feito no site Udemy, o certificado está abaixo. ",
         link:"https://www.udemy.com/certificate/UC-88b4f1a0-2b05-4f27-aa9b-4e8f3314e5bc/",

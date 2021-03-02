@@ -75,6 +75,9 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+
+    opacity: 0;
+    animation: show-bottom 0.5s ease-out 0.35s forwards;
 }
 
 .app-details .info .link-btn{
@@ -227,7 +230,7 @@
 
 @media (max-width: 500px){
     .app-details{
-        padding: 60px 50px 70px min(30px, 4vw);
+        padding: 60px 50px 70px 0;
     }
 
     .app-details .info .name{
