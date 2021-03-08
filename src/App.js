@@ -6,18 +6,18 @@ import About from "./pages/About"
 import Jobs from "./pages/Jobs"
 import PAGES_URL from "./data/pagesURL"
 import AppDetails from "./pages/jobs/AppDetails"
-import './App.css';
 import Skills from "./pages/Skills"
 import Navbar from "./components/Navbar"
 import GlitchText from "./components/GlitchText"
 import BlurryText from "./components/BlurryText"
 import PagesSelector from "./components/PagesSelector"
-
-import "./css/StandardGlitchText.css"
 import Contact from "./pages/Contact"
 
+import './App.css';
+import "./css/StandardGlitchText.css"
+
 function App() {
-  const { currentRef, pageInfo, imageElement, setImageElement, windowSize } = useContext(PagesContext)
+  const { currentRef, pageInfo, imageElement, setImageElement, windowSize, language } = useContext(PagesContext)
   const deltaX = 50
 
   const scrollingConfig = {
@@ -30,8 +30,6 @@ function App() {
     const scrolled = e.deltaY || e.deltaX
     window.scrollBy(scrolled<0?-deltaX:deltaX,0)
   }
-
-  const handleTouch = e => console.log(e)
 
   useEffect(() => {
     window.addEventListener("wheel", handleWheel)
@@ -74,7 +72,7 @@ function App() {
         </div>
 
         <div className={`scrollable-container page ${pageInfo.dark && "dark"}`}>
-          <Navbar dark={pageInfo.dark}/>
+          <Navbar dark={pageInfo.dark} language={language}/>
           { pageInfo.name && 
             <GlitchText
               key={pageInfo.name} 

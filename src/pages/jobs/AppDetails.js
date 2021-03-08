@@ -6,22 +6,23 @@ import APPS from "../../datasets/jobs/apps"
 import { APPS_IMGS } from "../../data/imgPath"
 import { join } from "path"
 import ImageGrid from "../../components/ImageGrid"
-
+import { loadAllImages } from "../../utils/imagesLoader"
 import withScrollable from "../../HOC/withScrollable"
+import AppDetailsTexts from "../../texts/jobs/AppDetails"
 
 import "../../css/AppDetails.css"
 import "../../css/ImageGrid.css"
-import { loadAllImages } from "../../utils/imagesLoader"
 
 function AppDetails(){
     const { appID } = useParams()
-    const { setPageInfo, updateSize, windowSize, isTouch } = useContext(PagesContext)
+    const { setPageInfo, updateSize, windowSize, isTouch, language } = useContext(PagesContext)
     const [ app, setApp ] = useState(undefined)
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isImgLoaded, setIsImgLoaded ] = useState(false)
     const mediaPath = join(process.env.PUBLIC_URL, APPS_IMGS, appID)
     const mainRef = useRef(undefined)
     const contentRef = useRef(undefined)
+    const texts = AppDetailsTexts[language]
 
     const calculateNumColumns = (children, height) => {
         let numColumns = 0, numElements = 0, total = height
@@ -90,7 +91,8 @@ function AppDetails(){
 
     const getContentElements = () => {
         const contents = []
-        const { highlights, topics } = app
+        const { highlights, topics: _topics } = app
+        const topics = _topics[language]
         let highlightsIndex = 0
 
         for(let i=0, length=topics.length; i<length; i++){
@@ -124,7 +126,7 @@ function AppDetails(){
 
     useEffect(() => {
         setPageInfo({ 
-            name: "trabalhos", 
+            name: texts.pageName, 
             mainColor: "var(--black)", 
             highlightColor: "var(--app-details)",
             blurryText: "",
@@ -152,11 +154,11 @@ function AppDetails(){
                     }
                     </div>
                     <h1 className="name">{app.name}</h1>
-                    <p className="desc">{app.description}</p>
+                    <p className="desc">{app.description[language]}</p>
                     { app.links && (
                         <div className="links spaced-items">
                         {
-                            app.links.map(([name, link], index) => (
+                            app.links.map(([names, link], index) => (
                                 <a 
                                     key={`l-${index}`} 
                                     className="btn" 
@@ -165,7 +167,7 @@ function AppDetails(){
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    {name}
+                                    {names[language]}
                                 </a>
                             ))
                         }
@@ -178,8 +180,8 @@ function AppDetails(){
                 }
                 </div>
                 <div className="galery">
-                    <h2 className="title">galery</h2>
-                    <h2 className="hollow-title">galery</h2>
+                    <h2 className="title">{texts.galery}</h2>
+                    <h2 className="hollow-title">{texts.galery}</h2>
                     {
                         isImgLoaded?
                             <ImageGrid 

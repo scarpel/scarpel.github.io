@@ -6,18 +6,20 @@ import Waiter from "../components/Waiter"
 import PERSONAL_INFO from "../datasets/personalInfo"
 import contactAnimation from "../media/lottie/contact.json"
 import lottie from "lottie-web"
-
-import "../css/Contact.css"
 import SimpleInfo from "../components/SimpleInfo"
 import getSocialIcon from "../datasets/socialIcons"
+import ContactTexts from "../texts/Contact"
+
+import "../css/Contact.css"
 
 function Contact() {
-    const { setPageInfo } = useContext(PagesContext)
+    const { setPageInfo, language } = useContext(PagesContext)
     const lottieRef = useRef(undefined)
+    const texts = ContactTexts[language]
 
     useEffect(() => {
         document.title = `GHS: Contato`
-        setPageInfo({ name: "contato", mainColor: "var(--contato)", blurryText: "contact" })
+        setPageInfo({ name: texts.pageName, mainColor: "var(--contato)", blurryText: "contact" })
     }, [])
 
     const loadAnimation = () => {
@@ -48,9 +50,9 @@ function Contact() {
                 <div className="left-container">
                     <div className="top">
                         <div className="headline">
-                            <AnimatedText text="vamos trabalhar"/>
+                            <AnimatedText text={texts.lets}/>
                             <Waiter wait={500}>
-                                <AnimatedText text="juntos?!"/>
+                                <AnimatedText text={texts.together}/>
                             </Waiter>
                         </div>
                     </div>
@@ -58,7 +60,7 @@ function Contact() {
                         <SimpleInfo className="email" title="E-mail">
                             { PERSONAL_INFO.email }
                         </SimpleInfo>
-                        <SimpleInfo  className="phone" title="Telefone">
+                        <SimpleInfo  className="phone" title={texts.phone}>
                             { PERSONAL_INFO.phone }
                         </SimpleInfo>
                         <SimpleInfo className="social-container" title="Social">
@@ -75,10 +77,10 @@ function Contact() {
                             }
                             </div> 
                         </SimpleInfo>
-                        <SimpleInfo className="resume" title="Currículo">
+                        <SimpleInfo className="resume" title={texts.resume}>
                             <a href={PERSONAL_INFO.resume} target="_blank" rel="noopener noreferrer">
                                 <button className="resume-btn">
-                                        currículo.pdf
+                                        {texts.resume}.pdf
                                 </button>
                             </a>
                         </SimpleInfo>

@@ -36,19 +36,19 @@
 }
 
 .navbar .menu-icon.clicked div{
-    background-color: var(--black);
+    background-color: var(--black) !important;
 }
 
 .navbar.dark .logo{
-    fill: var(--black);
+    fill: var(--black) !important;
 }
 
 .navbar.dark .menu-icon div{
-    background-color: var(--black);
+    background-color: var(--black) !important;
 }
 
 .navbar.dark .menu-icon.clicked div{
-    background-color: var(--white);
+    background-color: var(--white) !important;
 }
 
 .navbar.dark .menu .menu-container{

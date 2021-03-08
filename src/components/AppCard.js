@@ -6,7 +6,7 @@ import "../css/AppCard.css"
 import { useEffect, useRef } from "react"
 
 export default function AppCard(props) {
-    const { item, numTools = 5, style = {}, className="", handleClick = () => {}, path="" } = props
+    const { item, numTools = 5, style = {}, className="", handleClick = () => {}, path="", language } = props
     const lottieRef = useRef()
 
     useEffect(() => {
@@ -41,8 +41,8 @@ export default function AppCard(props) {
                 }
                 </div>
                 <h1 className="app-title">{item.name}</h1>
-                <p className="app-desc">{item.description}</p>
-                <button onClick={handleClick}>+ detalhes</button>
+                <p className="app-desc">{item.description[language]}</p>
+                <button onClick={handleClick}>+ {language === "en"? "details": "detalhes"}</button>
             </section>
         </div>
     )

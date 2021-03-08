@@ -59,12 +59,15 @@
     transform: translateX(50px);
     opacity: 0;
     line-height: 1.5em;
+    white-space: unset;
 
     transition: all ease-out;
     transition-delay: 0ms;
     transition-duration: 1ms;
 
     user-select: none;
+
+    width: 200px;
 }
 
 .menu.showing nav ul li{

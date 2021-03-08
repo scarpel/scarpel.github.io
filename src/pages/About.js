@@ -11,13 +11,14 @@ import useWindowSize from "../hooks/useWindowSize"
 import usePeekABoo from "../hooks/usePeekABoo"
 import certificados from "../datasets/certificados"
 import { join } from "path"
+import { CERTFICADES_MINIATURE } from "../data/imgPath"
+import AboutInfo from "../texts/About"
 
 import "../css/Page.css"
 import "../css/About.css"
-import { CERTFICADES_MINIATURE } from "../data/imgPath"
 
 function About() {
-    const { setPageInfo } = useContext(PagesContext)
+    const { setPageInfo, language } = useContext(PagesContext)
     const size = useWindowSize()
     const statue = useRef()
     const graduation = useRef()
@@ -25,6 +26,7 @@ function About() {
     const aboutRef = useRef()
     const educationRef = useRef()
     const certificadesRef = useRef()
+    const texts = AboutInfo[language]
 
     const handlePeekABoo = (divRef, animationRef, animation) => {
         loadAnimation(animationRef, animation)
@@ -67,7 +69,7 @@ function About() {
 
     useEffect(() => {
         document.title = `GHS: Sobre Mim`
-        setPageInfo({ name: "sobre mim", mainColor: "var(--sobre)", blurryText: "about" })
+        setPageInfo({ name: texts.pageName, mainColor: "var(--sobre)", blurryText: "about" })
         
         if("ontouchstart" in window){
             const timeouts = [
@@ -82,35 +84,25 @@ function About() {
 
     return (
         <div className="about">
-            <Presentation />
+            <Presentation yearsLocation={texts.yearsLocation}/>
             <div className="about-me hidden" ref={aboutRef}>
                 <div className="lottie-container statue" ref={statue}></div>
                 <section className="text-block">
-                    <p>
-                        eu sempre gostei de <em>criar</em>, unindo isso a minha demasiada <em>curiosidade</em> e  
-                        <em> paixão por computadores</em> (bom, na época era mais por The Sims 2, mas enfim...) 
-                        eu descobri no <em>desenvolvimento</em> uma paixão que poderia levar para a vida profissional...
-                    </p>
+                    <p>{texts.intro()}</p>
                 </section>
             </div>
             
             <div className="education hidden" ref={educationRef}>
                 <div className="lottie-container graduation" ref={graduation}></div>
                 <section className="text-block">
-                    <p>
-                        ... eu, então, tornei-me <em>técnico em Informática</em> pela ETEC João Batista de Lima Figueiredo e 
-                        sou, quase, um <em>bacharel em Ciência da Computação</em> pela Universidade Federal de Uberlândia...
-                    </p>
+                    <p>{texts.education()}</p>
                 </section>
             </div>
 
             <div className="certificades-container hidden" ref={certificadesRef}>
                 <div className="lottie-container certificade" ref={certificade}></div>
                 <section className="text-block">
-                    <p>
-                        ... além disso, estou sempre <em>aprendendo algo novo</em>, uma fato que me 
-                        rendeu alguns <em>certificados</em>...
-                    </p>
+                    <p>{texts.certificades()}</p>
                 </section>
                 <Certificades data={certificados} path={join(process.env.PUBLIC_URL, CERTFICADES_MINIATURE)}/>
             </div>

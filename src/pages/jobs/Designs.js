@@ -6,7 +6,7 @@ import { loadAllImages } from "../../utils/imagesLoader"
 import { join } from "path"
 import { DESIGN_IMGS } from "../../data/imgPath"
 import { PagesContext } from "../../context/PagesContext"
-
+import DesignsTexts from "../../texts/jobs/Designs"
 
 import "../../css/Designs.css"
 import "../../css/StandardJobPage.css"
@@ -14,8 +14,9 @@ import "../../css/ImageGrid.css"
 
 export default function Designs(){
     const [ isLoading, setIsLoading ] = useState(true)
-    const { updateSize } = useContext(PagesContext)
+    const { updateSize, language } = useContext(PagesContext)
     const path = join(process.env.PUBLIC_URL, DESIGN_IMGS)
+    const texts = DesignsTexts[language]
 
     useEffect(() => {
         document.title = `GHS: Designs`
@@ -30,10 +31,7 @@ export default function Designs(){
         <div key="designs" className="designs job-page">
             <div className="design-info job-desc">
                 <AnimatedText text="designs" delay={40}/>
-                <p>
-                    alguns dos meus trabalhos como designer gráfico
-                    e/ou projetos que fiz no meu tempo livre.
-                </p>
+                <p>{texts.content}</p>
             </div>
 
             {

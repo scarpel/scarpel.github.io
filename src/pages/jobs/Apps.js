@@ -13,7 +13,7 @@ import lottie from "lottie-web"
 import "../../css/Apps.css"
 
 export default function Apps() {
-    const { lastAppIndex, setLastAppIndex, pageInfo, isTouch } = useContext(PagesContext)
+    const { lastAppIndex, setLastAppIndex, pageInfo, isTouch, language } = useContext(PagesContext)
     const [currentIndex, setCurrentIndex] = useState(0)
     const history = useHistory()
     const currentApp = BRIEF_APPS[currentIndex]
@@ -99,9 +99,10 @@ export default function Apps() {
             <button className="arrow-btn left" onClick={previous} disabled={currentIndex === 0} >
                 <FiArrowLeftCircle />
             </button>
-            <AppCard 
+            <AppCard
                 key={currentIndex} 
                 item={currentApp}
+                language={language}
                 style={{animationName: `swipe-${currentDirectionRef.current}`}}
                 className={currentDirectionRef.current}
                 handleClick={() => {

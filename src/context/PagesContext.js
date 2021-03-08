@@ -1,15 +1,17 @@
-import { useState, createContext } from "react"
-import useWindowSize from "../hooks/useWindowSize"
+import { useState, createContext } from "react";
+import useWindowSize from "../hooks/useWindowSize";
+import LANGUAGES from "../data/languages";
 
 const PagesContext = createContext()
 
 function PagesContextProvider({children}) {
-    const [currentRef, setCurrentRef] = useState(undefined)
-    const [ pageInfo, _setPageInfo ] = useState({})
-    const [ imageElement, _setImageElement ] = useState(undefined)
-    const [ lastAppIndex, setLastAppIndex ] = useState(undefined)
-    const windowSize = useWindowSize()
-    const isTouch = "ontouchstart" in window
+    const [currentRef, setCurrentRef] = useState(undefined);
+    const [ pageInfo, _setPageInfo ] = useState({});
+    const [ imageElement, _setImageElement ] = useState(undefined);
+    const [ lastAppIndex, setLastAppIndex ] = useState(undefined);
+    const windowSize = useWindowSize();
+    const isTouch = "ontouchstart" in window;
+    const [ language, setLanguage ] = useState(LANGUAGES.en);
 
     const setRef = (ref = undefined) => setCurrentRef(ref)
 
@@ -57,7 +59,9 @@ function PagesContextProvider({children}) {
                 updateSize,
                 lastAppIndex,
                 setLastAppIndex,
-                isTouch
+                isTouch,
+                language,
+                setLanguage
             }
         }>
             {

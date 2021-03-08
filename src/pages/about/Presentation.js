@@ -3,6 +3,8 @@ import "../../css/Presentation.css"
 import image from "../../media/images/me.jpg"
 
 export default function Presentation(props) {
+    const { yearsLocation } = props;
+
     const getAge = () => {
         const current = new Date()
         const age = current.getFullYear() - 1999
@@ -16,7 +18,7 @@ export default function Presentation(props) {
                     <img src={image} className="me-img" alt="myself"/>
                     <span className="name">Guilherme<br/>H. Scarpel</span>
                     <span className="upper-name">Guilherme<br/>H. Scarpel</span>
-                    <span className="additional-info">{getAge()} anos, Brasil</span>
+                    <span className="additional-info">{getAge()} {yearsLocation}</span>
                 </section>
             </Waiter>
         </div>

@@ -5,18 +5,20 @@ import Apps from "./jobs/Apps"
 import { PagesContext } from "../context/PagesContext"
 import Waiter from "../components/Waiter"
 import withScrollable from "../HOC/withScrollable"
+import JobsTexts from "../texts/Jobs"
 
 import "../css/Page.css"
 import "../css/Jobs.css"
 
 function Jobs() {
-    const { setPageInfo, updateSize, pageInfo } = useContext(PagesContext)
+    const { setPageInfo, updateSize, pageInfo, language } = useContext(PagesContext)
     const [ CurrentPage, setCurrentPage ] = useState(() => Apps)
     const isQuick = pageInfo.currentPage === "appDetails"? true: false
+    const texts = JobsTexts[language]
 
     useEffect(() => {
         setPageInfo({ 
-            name: "trabalhos", 
+            name: texts.pageName, 
             mainColor: "var(--trabalhos)", 
             blurryText: "jobs",
             pagination: [

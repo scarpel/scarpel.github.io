@@ -4,17 +4,19 @@ import { front, back, others } from "../datasets/skills"
 import { PagesContext } from "../context/PagesContext"
 import IconsCard from "../components/IconsCard"
 import withScrollable from "../HOC/withScrollable"
+import SkillsTexts from "../texts/Skills"
 
 import "../css/Page.css"
 import "../css/Skills.css"
 
 function Skills(){
-    const { setPageInfo, updateSize } = useContext(PagesContext)
+    const { setPageInfo, updateSize, language } = useContext(PagesContext)
     const [ isShowing, setIsShowing ] = useState(false)
+    const texts = SkillsTexts[language]
 
     useEffect(() => {
         document.title = "GHS: Habilidades"
-        setPageInfo({ name: "habilidades", mainColor: "var(--habilidades)", blurryText: "skills" })
+        setPageInfo({ name: texts.pageName, mainColor: "var(--habilidades)", blurryText: "skills" })
     }, [])
 
     useEffect(updateSize, [isShowing])
@@ -24,7 +26,7 @@ function Skills(){
             <Waiter wait={2000} callback={() => setIsShowing(true)}>
                 <div className="time-information">
                     <div className="circle"></div>
-                    <span>Quanto mais opaca, mais tempo faz desde a última vez que a utilizei</span>
+                    <span>{texts.disclaimer}</span>
                 </div>
                 <div className="cards">
                     <div className="card-placeholder">
@@ -35,7 +37,7 @@ function Skills(){
                     </div>
 
                     <div className="card-placeholder">
-                        <IconsCard name="outros" data={others}/>
+                        <IconsCard name={texts.others} data={others}/>
                     </div>
                 </div>
             </Waiter>

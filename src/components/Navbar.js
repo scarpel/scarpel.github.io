@@ -4,12 +4,13 @@ import { ReactComponent as Logo } from "../media/svg/logo.svg";
 import MenuIcon from "./MenuIcon"
 import Menu from "./Menu"
 import "../css/Navbar.css"
-import PAGES_URL from "../data/pagesURL"
+import NavbarTexts from "../texts/Navbar"
 
 export default function Navbar(props){
-    const { dark } = props
+    const { dark, language } = props
     const [showMenu, setShowMenu] = useState(false)
     const history = useHistory()
+    const texts = NavbarTexts[language]
 
     const handleShowMenu = () => setShowMenu(!showMenu)
 
@@ -27,28 +28,7 @@ export default function Navbar(props){
                 <MenuIcon isShowing={showMenu} handleShowMenu={handleShowMenu}/>
                 <Menu 
                     showing={showMenu}
-                    items={[
-                        {
-                            title: "home",
-                            link: PAGES_URL.HOME
-                        },
-                        {
-                            title: "sobre mim",
-                            link: PAGES_URL.ABOUT
-                        },
-                        {
-                            title: "habilidades",
-                            link: PAGES_URL.SKILLS
-                        },
-                        {
-                            title: "trabalhos",
-                            link: PAGES_URL.JOBS
-                        },
-                        {
-                            title: "contato",
-                            link: PAGES_URL.CONTACT
-                        }
-                    ]}
+                    items={ texts.items }
                     handleClick={handleClick}
                 />
             </div>

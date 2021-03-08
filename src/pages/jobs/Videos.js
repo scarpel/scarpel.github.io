@@ -3,18 +3,20 @@ import VideoCard from "../../components/VideoCard"
 import videos from "../../datasets/videos"
 import AnimatedText from "../../components/AnimatedText"
 import { PagesContext } from "../../context/PagesContext"
+import { join } from "path"
+import { VIDEOS_IMGS } from "../../data/imgPath"
+import VideosTexts from "../../texts/jobs/Videos"
 
 import "../../css/StandardJobPage.css"
 import "../../css/Videos.css"
-import { join } from "path"
-import { VIDEOS_IMGS } from "../../data/imgPath"
 
 export default function Videos() {
-    const { updateSize, windowSize } = useContext(PagesContext)
+    const { updateSize, windowSize, language } = useContext(PagesContext)
     const mainRef = useRef(undefined)
     const infoRef = useRef(undefined)
     const containerRef = useRef(undefined)
     const path = join(process.env.PUBLIC_URL, VIDEOS_IMGS)
+    const texts = VideosTexts[language]
 
     const handleGridRows = () => {
         if(windowSize.width>999){
@@ -44,9 +46,7 @@ export default function Videos() {
         <div className="videos job-page" ref={mainRef}>
             <div className="videos-info job-desc" ref={infoRef}>
                 <AnimatedText text="vídeos" delay={40}/>
-                <p>
-                    alguns poucos vídeos que fiz e/ou editei.
-                </p>
+                <p>{texts.content}</p>
             </div>
             <div className="videos-container" ref={containerRef}>
                 {
