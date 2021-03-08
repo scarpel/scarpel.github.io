@@ -111,6 +111,10 @@
     z-index: 1000;
 }
 
+.home .languages:focus{
+    outline: none;
+}
+
 .home .languages *{
     background-color: var(--black);
     text-transform: uppercase;
@@ -129,10 +133,6 @@
 }
 
 @media (max-width: 500px){
-    .home .page-arrow{
-        display: none;
-    }
-
     .home .hand-emoji{
         left: 53%;
         max-width: 75vw;
@@ -175,6 +175,23 @@
     .home .card{
         width: 90vw;
         margin-left: max(-15px, -15%);
+    }
+
+    .home .languages-container{
+        top: 6px;
+        right: 40px;
+
+        font-size: 0.8rem;
+    }
+    
+    .home .languages{
+        width: 150px;
+    }
+}
+
+@media (max-width: 580px){
+    .home .page-arrow{
+        display: none;
     }
 }
 
