@@ -18,7 +18,7 @@ function Contact() {
     const texts = ContactTexts[language]
 
     useEffect(() => {
-        document.title = `GHS: Contato`
+        document.title = `GHS: ${texts.pageName.capitalize()}`
         setPageInfo({ name: texts.pageName, mainColor: "var(--contato)", blurryText: "contact" })
     }, [])
 

@@ -15,7 +15,7 @@ function Skills(){
     const texts = SkillsTexts[language]
 
     useEffect(() => {
-        document.title = "GHS: Habilidades"
+        document.title = `GHS: ${texts.pageName.capitalize()}`
         setPageInfo({ name: texts.pageName, mainColor: "var(--habilidades)", blurryText: "skills" })
     }, [])
 

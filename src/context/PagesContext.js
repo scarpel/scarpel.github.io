@@ -27,7 +27,6 @@ function PagesContextProvider({children}) {
             document.documentElement.style.setProperty("--main-color", obj.mainColor)
             document.documentElement.style.setProperty("--highlight-color", obj.mainColor)
         }
-
         _setPageInfo(obj)
     }
 

@@ -16,6 +16,10 @@ import Contact from "./pages/Contact"
 import './App.css';
 import "./css/StandardGlitchText.css"
 
+String.prototype.capitalize = function(){
+  return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
 function App() {
   const { currentRef, pageInfo, imageElement, setImageElement, windowSize, language } = useContext(PagesContext)
   const deltaX = 50
@@ -75,7 +79,7 @@ function App() {
           <Navbar dark={pageInfo.dark} language={language}/>
           { pageInfo.name && 
             <GlitchText
-              key={pageInfo.name} 
+              key={new Date().getTime()} 
               text={pageInfo.name} 
               repetitions={3} 
               color={pageInfo.mainColor}

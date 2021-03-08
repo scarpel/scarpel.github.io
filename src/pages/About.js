@@ -68,7 +68,7 @@ function About() {
     }
 
     useEffect(() => {
-        document.title = `GHS: Sobre Mim`
+        document.title = `GHS: ${texts.pageName.capitalize()}`
         setPageInfo({ name: texts.pageName, mainColor: "var(--sobre)", blurryText: "about" })
         
         if("ontouchstart" in window){
