@@ -1,4 +1,4 @@
-export default {
+const texts = {
   en: {
     pageName: "skills",
     disclaimer: "The more opaque, the more time since I last used it",
@@ -9,4 +9,6 @@ export default {
     disclaimer: "Quanto mais opaca, mais tempo faz desde a última vez que a utilizei",
     others: "outros"
   }
-}
+};
+
+export default texts;

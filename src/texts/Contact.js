@@ -1,4 +1,4 @@
-export default ({
+const texts = ({
   en:{
     pageName: "contact",
     lets: "let's work",
@@ -13,4 +13,6 @@ export default ({
     phone: "telefone",
     resume: "currículo"
   }
-})
+});
+
+export default texts;

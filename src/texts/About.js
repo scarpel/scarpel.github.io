@@ -1,4 +1,4 @@
-export default {
+const texts =  {
   en: {
     pageName: "about me",
     yearsLocation: "years, Brazil",
@@ -44,4 +44,6 @@ export default {
       </>
     )
   }
-}
+};
+
+export default texts;

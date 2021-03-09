@@ -1,4 +1,4 @@
-export default {
+const texts = {
   en: {
     pageName: "jobs"
   },
@@ -6,3 +6,5 @@ export default {
     pageName: "trabalhos"
   }
 }
+
+export default texts;

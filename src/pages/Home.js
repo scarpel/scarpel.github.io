@@ -10,6 +10,7 @@ import PAGES_URL from "../data/pagesURL"
 import PageArrow from "../components/PageArrow"
 import HomeInfo from "../texts/Home"
 import { IoChevronDown } from "react-icons/io5"
+import { HiOutlineGlobe } from "react-icons/hi"
 
 import "../css/Page.css"
 import "../css/Home.css"
@@ -32,6 +33,7 @@ export default function Home(){
     return (
         <div className="home">
             <div className="languages-container">
+                <HiOutlineGlobe className="globe"/>
                 <select value={language} className="languages" onChange={handleSelect}>
                     <option value="en">English</option>
                     <option value="br">Português</option>

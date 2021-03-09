@@ -1,4 +1,4 @@
-export default {
+const texts = {
   en: {
     salute: "hi!",
     myName: "my name is",
@@ -31,4 +31,6 @@ export default {
     iAm: "eu sou um",
     aboutMe: "sobre mim"
   }
-}
+};
+
+export default texts; 
