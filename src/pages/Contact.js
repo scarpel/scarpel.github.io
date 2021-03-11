@@ -78,7 +78,7 @@ function Contact() {
                             </div> 
                         </SimpleInfo>
                         <SimpleInfo className="resume" title={texts.resume}>
-                            <a href={PERSONAL_INFO.resume} target="_blank" rel="noopener noreferrer">
+                            <a href={PERSONAL_INFO.resume[language]} target="_blank" rel="noopener noreferrer">
                                 <button className="resume-btn">
                                         {texts.resume}.pdf
                                 </button>

@@ -8,7 +8,10 @@ const PERSONAL_INFO = {
         ["linkedin", "https://www.linkedin.com/in/scarpel/"],
         ["insta", "https://www.instagram.com/gui.scarpel"]
     ],
-    resume: "/ResumeBR.pdf"
+    resume: {
+        en: "/Resume.pdf",
+        br: "/ResumeBR.pdf"
+    }
 }
 
 export default PERSONAL_INFO
